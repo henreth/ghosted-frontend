@@ -4,6 +4,7 @@ import '../style/homepage.css';
 import undo from '../img/undo.png'
 import heart from '../img/real_heart.png'
 import reject from '../img/reject_bones2.png'
+import location from '../img/location_icon.png'
 import Card from './Card'
 
 
@@ -55,6 +56,7 @@ const db = [
       url: '../img/dinesh.jpeg',
       pronouns: 'she/her/hers',
       age: 'April 14, 1865',
+      location: '6 feet under'
     }
   ]
   
@@ -133,7 +135,9 @@ const db = [
                   className='card'
                 >
                   <h3>{character.name}</h3>
-                  <h4>{character.pronouns}</h4>
+                  {/* <h4>{character.pronouns}</h4> */}
+                  <img className = 'location-icon' src={location}/>
+                  <div className='location-text'>{character.location}</div>
                   <h4 className='age'>{character.age}</h4>
                 </div>
               </Card>
