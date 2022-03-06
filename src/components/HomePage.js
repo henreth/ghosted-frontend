@@ -6,6 +6,8 @@ import heart from '../img/real_heart.png'
 import reject from '../img/reject_bones2.png'
 import location from '../img/location_icon.png'
 import Card from './Card'
+import image from '../img/abe.jpeg'
+import info from '../img/info_icon.png'
 
 
 const db = [
@@ -135,10 +137,12 @@ const db = [
                   className='card'
                 >
                   <h3>{character.name}</h3>
+                  <img className='img' src={image}/>
                   {/* <h4>{character.pronouns}</h4> */}
                   <img className = 'location-icon' src={location}/>
                   <div className='location-text'>{character.location}</div>
-                  <h4 className='age'>{character.age}</h4>
+                  {/* <h4 className='age'>{character.age}</h4> */}
+                  <img className='info-icon' src={info} />
                 </div>
               </Card>
             ))}

@@ -56,14 +56,15 @@ h2 {
 
 .card {
   position: relative;
-  background-color: rgb(144, 161, 155);
+  /* background-color: rgb(144, 161, 155); */
+  background-color: black;
   /* width: 80vw;
   max-width: 260px;
   height: 300px; */
   width: 180vw;
   max-width: 360px;
-  height: 450px;
-  box-shadow: 0px 0px 60px 0px rgba(60, 236, 183, 0.3);
+  height: 445px;
+  box-shadow: 0px 0px 60px 0px rgba(60, 236, 183, 0.1);
   border-radius: 20px;
   background-size: cover;
   background-position: center;
@@ -104,9 +105,10 @@ h2 {
   filter: invert(100%);
   position: absolute;
   bottom: 0;
-  margin-left: -165px;
-  margin-bottom: 5px;
-  height: 21px
+  /* margin-left: -165px; */
+  margin-left: -350px;
+  margin-bottom: 6px;
+  height: 20px
 }
 
 .card .location-text {
@@ -114,7 +116,7 @@ h2 {
   font-weight: light;
   bottom: 0;
   margin: 10px;
-  margin-left: 40px;
+  margin-left: 33px;
   margin-bottom: 7px;
   color: #fff;
 }
@@ -198,5 +200,23 @@ h2 {
 .undo-button:hover{
   filter: brightness(70%) ; 
   transform: scale(1.15);
+}
+
+.card .img {
+  height: 380px;
+  width: 360px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.card .info-icon {
+  filter: invert(100%);
+  position: absolute;
+  bottom: 0;
+  /* margin-left: -165px; */
+  margin-left: -45px;
+  margin-bottom: 15px;
+  height: 35px
+
 }
 
