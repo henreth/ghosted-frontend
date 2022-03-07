@@ -1,68 +1,25 @@
-import React, { useState, useMemo, useRef } from 'react'
-import TinderCard from 'react-tinder-card'
+import React, { useState, useMemo, useRef, useEffect } from 'react'
 import '../style/homepage.css';
-import undo from '../img/undo.png'
-import heart from '../img/real_heart.png'
-import reject from '../img/reject_bones2.png'
-import location from '../img/location_icon.png'
-import Card from './Card'
-import image from '../img/abe.jpeg'
-import info from '../img/info_icon.png'
+import axios from 'axios';
+import undo from '../img/undo.png';
+import heart from '../img/real_heart.png';
+import reject from '../img/reject_bones2.png';
+import location from '../img/location_icon.png';
+import Card from './Card';
+import image from '../img/abe.jpeg';
+import info from '../img/info_icon.png';
 
-
-const db = [
-    {
-        name: 'Jonathan Laureano',
-        url: './img/richard.jpg',
-        pronouns: 'he/him/his',
-        age: 2314,      
-    },
-    {
-      name: 'Jonathan Laureano',
-      url: './img/richard.jpg',
-      pronouns: 'he/him/his',
-      age: 2314,
-    },
-    {
-      name: 'Howie Bling',
-      url: './img/richard.jpg',
-      pronouns: 'he/him/his',
-      age: 2314,
-    },
-    {
-      name: 'Adam',
-      url: './img/richard.jpg',
-      pronouns: 'he/him/his',
-      age: 2314,
-    },
-    {
-      name: 'Paul Allen',
-      url: './img/erlich.jpg',
-      pronouns: 'he/him/his',
-      age: 2314,
-    },
-    {
-      name: 'Patricia Bateman',
-      url: '../img/monica.jpeg',
-      pronouns: 'she/her/hers',
-      age: 2314,
-    },
-    {
-      name: 'Elizabeth Holmes',
-      url: '../img/jared.jpeg',
-      pronouns: 'she/her/hers',
-      age: 1213
-    },
-    {
-      name: 'Abraham Lincoln',
-      url: '../img/dinesh.jpeg',
-      pronouns: 'she/her/hers',
-      age: 'April 14, 1865',
-      location: '6 feet under'
-    }
-  ]
   
   function HomePage () {
+
+    let [db,setDB] = useState([]);
+    useEffect(()=>{
+      axios.get('http://localhost:4000/people')
+      .then(r=>{setDB(r.data)
+      setCurrentIndex(r.data.length-1)})
+    },[])
+
+
     const [currentIndex, setCurrentIndex] = useState(db.length - 1)
     const [lastDirection, setLastDirection] = useState()
     // used for outOfFrame closure
@@ -138,9 +95,9 @@ const db = [
                 >
                   <h3>{character.name}</h3>
                   <img className='img' src={image}/>
-                  {/* <h4>{character.pronouns}</h4> */}
-                  <img className = 'location-icon' src={location}/>
-                  <div className='location-text'>{character.location}</div>
+                  <h4>{character.pronouns}</h4>
+                  {/* <img className = 'location-icon' src={location}/>
+                  <div className='location-text'>{character.location}</div> */}
                   {/* <h4 className='age'>{character.age}</h4> */}
                   <img className='info-icon' src={info} />
                 </div>
