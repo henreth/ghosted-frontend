@@ -10,7 +10,7 @@
     /* background: linear-gradient(#838181, #222020); */
     background: transparent;
     position: fixed;
-    width: 120rem;
+    /* width: 120rem; */
     height: 55px;
     /* border: .25px solid #dfdfdf; */
     transition-timing-function: ease-in;

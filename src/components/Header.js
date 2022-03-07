@@ -2,9 +2,7 @@ import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import logo from '../img/ghosted-logo.png' 
 import '../style/header.css';
-
-
-
+import Sidebar from './Sidebar'
 
 function Header({}) {
   
@@ -19,6 +17,7 @@ function Header({}) {
     <div className="header">
       <div className='header-container'>
 
+      <Sidebar pageWrapId={'page-wrap'} outerContainerId={'outer-container'} />
         <NavLink to="/">
             <img 
               src={logo}

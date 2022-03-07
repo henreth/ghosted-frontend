@@ -1,65 +1,110 @@
 {
-  "people": [
-      {
-          "name": "Benjamin Franklin",
-          "url": "./img/richard.jpg",
-          "pronouns": "he/him/his",
-          "age": 2314,    
-          "location": "6 feet under"
-    
-      },
-      {
-        "name": "Jonathan Laureano",
-        "url": "./img/richard.jpg",
-        "pronouns": "he/him/his",
-        "age": 2314,
-        "location": "6 feet under"
-  
-      },
-      {
-        "name": "Howie Bling",
-        "url": "./img/richard.jpg",
-        "pronouns": "he/him/his",
-        "age": "May 26, 2012",
-        "location": "6 feet under"
-  
-      },
-      {
-        "name": "Mila Kunis - American Psycho II",
-        "url": "./img/richard.jpg",
-        "pronouns": "he/him/his",
-        "age": 2314,
-        "location": "6 feet under"
-  
-      },
-      {
-        "name": "Paul Allen",
-        "url": "./img/erlich.jpg",
-        "pronouns": "he/him/his",
-        "age": 2314,
-        "location": "6 feet under"
-      },
-      {
-        "name": "Patricia Bateman",
-        "url": "../img/monica.jpeg",
-        "pronouns": "she/her/hers",
-        "age": 2314,
-        "location": "6 feet under"
-      },
-      {
-        "name": "Elizabeth Holmes",
-        "url": "../img/jared.jpeg",
-        "pronouns": "she/her/hers",
-        "age": 1213,
-        "location": "6 feet under"
-  
-      },
-      {
-        "name": "Abraham Lincoln",
-        "url": "../img/dinesh.jpeg",
-        "pronouns": "she/her/hers",
-        "age": "April 14, 1865",
-        "location": "6 feet under"
-      }
-    ]
+  "profiles": [
+    {
+      "name": "Benjamin Franklin",
+      "url": "./img/richard.jpg",
+      "pronouns": "he/him/his",
+      "age": 2314,
+      "location": "6 feet under"
+    },
+    {
+      "name": "Jon",
+      "url": "./img/richard.jpg",
+      "pronouns": "he/him/his",
+      "age": 2314,
+      "location": "6 feet under"
+    },
+    {
+      "name": "Howie Bling",
+      "url": "./img/richard.jpg",
+      "pronouns": "he/him/his",
+      "age": "May 26, 2012",
+      "location": "Madison Square Garden"
+    },
+    {
+      "name": "Caesar",
+      "url": "./img/richard.jpg",
+      "pronouns": "he/him/his",
+      "age": "44 BC",
+      "location": "6 feet under"
+    },
+    {
+      "name": "Paul Allen",
+      "url": "./img/erlich.jpg",
+      "pronouns": "he/him/his",
+      "age": 27,
+      "location": "6 feet under"
+    },
+    {
+      "name": "Ted",
+      "url": "../img/monica.jpeg",
+      "pronouns": "she/her/hers",
+      "age": "Some Random Date",
+      "location": "The Underworld"
+    },
+    {
+      "name": "Elizabeth Holmes",
+      "url": "../img/jared.jpeg",
+      "pronouns": "she/her/hers",
+      "age": "random date",
+      "location": "Theranos"
+    },
+    {
+      "name": "Abraham Lincoln",
+      "url": "../img/dinesh.jpeg",
+      "pronouns": "she/her/hers",
+      "age": "April 14, 1865",
+      "location": "6 feet under"
+    }
+  ],
+  "likes": [
+    {
+      "user_id": 0,
+      "user_like": true,
+      "profile_like": null,
+      "id": 1
+    },
+    {
+      "user_id": 0,
+      "user_like": true,
+      "profile_like": null,
+      "id": 2
+    },
+    {
+      "user_id": 0,
+      "user_like": true,
+      "profile_like": null,
+      "id": 3
+    },
+    {
+      "user_id": 0,
+      "user_like": true,
+      "profile_like": null,
+      "id": 4
+    },
+    {
+      "user_id": 0,
+      "user_like": true,
+      "profile_like": null,
+      "id": 5
+    },
+    {
+      "user_id": 0,
+      "user_like": true,
+      "profile_like": null,
+      "id": 6
+    },
+    {
+      "user_id": 0,
+      "user_like": true,
+      "profile_like": null,
+      "id": 7
+    },
+    {
+      "user_id": 0,
+      "user_like": false,
+      "profile_like": null,
+      "id": 8
+    }
+  ]
 }

@@ -9,6 +9,8 @@ import HomePage from './HomePage'
 
 
 function App () {
+
+
   return (
     <React.Fragment>
       <NavBar />

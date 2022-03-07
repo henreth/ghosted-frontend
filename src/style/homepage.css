@@ -45,12 +45,17 @@ h2 {
 }
 
 .cardContainer {
+  /* Default Size */
   /* width: 90vw;
   max-width: 260px;
   height: 300px; */
-  width: 190vw;
+  /* Size 2 */
+  /* width: 190vw;
   max-width: 360px;
-  height: 400px;
+  height: 400px; */
+  width: 390vw;
+  max-width: 460px;
+  height: 500px;
 }
 /* #222423 */
 
@@ -58,12 +63,17 @@ h2 {
   position: relative;
   /* background-color: rgb(144, 161, 155); */
   background-color: black;
+  /* Default Size */
   /* width: 80vw;
   max-width: 260px;
   height: 300px; */
-  width: 180vw;
+  /* Size 2 */
+  /* width: 180vw;
   max-width: 360px;
-  height: 445px;
+  height: 445px; */
+  width: 380vw;
+  max-width: 460px;
+  height: 545px;
   box-shadow: 0px 0px 60px 0px rgba(60, 236, 183, 0.1);
   border-radius: 20px;
   background-size: cover;
@@ -106,7 +116,7 @@ h2 {
   position: absolute;
   bottom: 0;
   /* margin-left: -165px; */
-  margin-left: -350px;
+  margin-left: -450px;
   margin-bottom: 6px;
   height: 20px
 }
@@ -143,9 +153,6 @@ h2 {
   padding: 10px;
   border-radius: 5px;
   border: none;
-  /* color: #fff;
-  font-size: 18px;
-  background-color: #9198e5; */
   transition: 200ms;
   margin: 0 10px;
   font-weight: bolder;
@@ -189,7 +196,6 @@ h2 {
 
 .undo-button {
   cursor: pointer;
-  /* height: 3.3rem; */
   height: 4.8rem;
   text-decoration: none;
   transition: all 0.2s;
@@ -198,13 +204,13 @@ h2 {
 }
 
 .undo-button:hover{
-  filter: brightness(70%) ; 
+  filter: invert(70%) ; 
   transform: scale(1.15);
 }
 
 .card .img {
-  height: 380px;
-  width: 360px;
+  height: 480px;
+  width: 460px;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
 }
@@ -213,10 +219,77 @@ h2 {
   filter: invert(100%);
   position: absolute;
   bottom: 0;
-  /* margin-left: -165px; */
   margin-left: -45px;
   margin-bottom: 15px;
   height: 35px
 
 }
 
+/* --------------- */
+
+/* .buttons {
+  margin: 20px;
+  display: flex;
+  margin-top: 6px;
+  margin-left: 225px;
+}
+
+.buttons button {
+  flex-shrink: 0;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  transition: 200ms;
+  font-weight: bolder;
+  width: 160px;
+  box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.10);
+}
+
+@keyframes popup {
+  0%   { transform: scale(1,1) }
+  10%  { transform: scale(1.1,1.1) }
+  30%  { transform: scale(.9,.9) }
+  50%  { transform: scale(1,1) }
+  57%  { transform: scale(1,1) }
+  64%  { transform: scale(1,1) }
+  100% { transform: scale(1,1) }
+}
+
+.like-button  {
+  cursor: pointer;
+  height: 3.3rem;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.like-button:hover{
+  filter: opacity(.5) drop-shadow(0 0 0 pink); 
+  transform: scale(1.15);
+}
+
+.reject-button {
+  cursor: pointer;
+  height: 3.3rem;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.reject-button:hover{
+  filter: opacity(.5) drop-shadow(0 0 0 red); 
+  transform: scale(1.15);
+}
+
+.undo-button {
+  cursor: pointer;
+  height: 3.8rem;
+  text-decoration: none;
+  transition: all 0.2s;
+  margin-left: .75rem;
+  margin-right: .5rem;
+}
+
+.undo-button:hover{
+  filter: brightness(70%) ; 
+  transform: scale(1.15);
+}
+ */
