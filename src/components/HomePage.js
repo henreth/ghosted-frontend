@@ -7,7 +7,7 @@ import reject from '../img/reject_bones2.png';
 import location from '../img/location_icon.png';
 import Card from './Card';
 import image from '../img/abe.jpeg';
-import info from '../img/info_icon.png';
+import info from '../img/info-icon.png';
 
 let peopleUrl = 'http://localhost:4000/profiles'
 let likesUrl = 'http://localhost:4000/likes'
@@ -20,12 +20,16 @@ let likesUrl = 'http://localhost:4000/likes'
     
     useEffect(()=>{
       axios.get(peopleUrl)
-      .then(r=>{setDB(r.data)
-      setCurrentIndex(r.data.length-1)
-      setLastPerson(r.data[r.data.length-1])
+      .then(r=>{
+        setDB(r.data)
+        console.log(r.data)
+        setCurrentIndex(r.data.length-1)
+        setLastPerson(r.data[r.data.length-1])
 
       axios.get(likesUrl)
-      .then(r=>{setLiked(r.data)})
+      .then(r=>{
+        console.log(r.data)
+        setLiked(r.data)})
     })
     },[])
 
@@ -61,45 +65,35 @@ let likesUrl = 'http://localhost:4000/likes'
     const swiped = (direction, character, index) => {
       setLastDirection(direction)
       updateCurrentIndex(index - 1)
+      console.log(db[index-1])
       if (direction==='right'){
+        console.log(lastPerson)
         setLikes([...likes,lastPerson])
-        axios.post(likesUrl,{user_id: 0,
+        axios.post(likesUrl,{
+          user_id: 0,
           profile_id: lastPerson.id,
           user_like: true,
           profile_like: null})
-        setLiked([...liked,{user_id: 0,
+        setLiked([...liked,{
+          user_id: 0,
           profile_id: lastPerson.id,
           user_like: true,
           profile_like: null}])
 
-      //   fetch('http://localhost:4000/likes', {
-      //     method: "POST",
-      //     headers: {
-      //       "Content-Type": "application/json",
-      //     },
-      //     body: JSON.stringify({
-      //       user_id: 0,
-      //       profile_id: lastPerson.id,
-      //       user_like: true,
-      //       profile_like: null
-      //     }),
-      // }).then(r=>setLiked([...liked,{user_id: 0,
-      //   profile_id: lastPerson.id,
-      //   user_like: true,
-      //   profile_like: null}]))
-
       } else if (direction==='left'){
         setRejects([...rejects,lastPerson])
-        axios.post(likesUrl,{user_id: 0,
+        axios.post(likesUrl,{
+          user_id: 0,
           profile_id: lastPerson.id,
           user_like: false,
           profile_like: null})
-        setLiked([...liked,{user_id: 0,
+        setLiked([...liked,{
+          user_id: 0,
           profile_id: lastPerson.id,
           user_like: false,
           profile_like: null}])
       }
-      setLastPerson(db[currentIndex-1])
+      setLastPerson(db[index-1])
     }
   
     const outOfFrame = (name, idx) => {
@@ -166,17 +160,13 @@ let likesUrl = 'http://localhost:4000/likes'
                   className='card'
                 >
                   <h3>{character.name}</h3>
-                  <img className='img' src={image}/>
+                  <img className='img' src={character.image}/>
                   {/* <h4>{character.pronouns}</h4> */}
-                  <img className = 'location-icon' src={location}/>
-                  <div className='location-text'>{character.location}</div>
-                  {/* <h4 className='age'>{character.age}</h4> */}
+                  {/* <img className = 'location-icon' src={location}/> */}
+                  {/* <div className='location-text'>{character.location}</div> */}
+                  <div className='description-text'>{character.description.split('').length >50 ? character.description.slice(0,50)+'...':character.description}</div>
+                  <h4 className='age'>{character.age}</h4>
                   <img className='info-icon' src={info} />
-                  {/* <div className='buttons'>
-                    <img className="reject-button" onClick={() => swipe('left')} alt='reject' src={reject} />
-                    <img className="undo-button" onClick={() => goBack()} alt='undo' src={undo} />
-                    <img className="like-button" onClick={() => swipe('right')} alt='heart' src={heart} />
-                  </div> */}
 
                 </div>
               </Card>

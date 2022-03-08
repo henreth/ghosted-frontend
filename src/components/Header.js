@@ -14,10 +14,15 @@ function Header({}) {
         marginBottom: "12px",
       }}
     >
+    <Sidebar 
+        pageWrapId={'page-wrap'} 
+        outerContainerId={'outer-container'} 
+        width={"500px"}
+    />
     <div className="header">
       <div className='header-container'>
 
-      <Sidebar pageWrapId={'page-wrap'} outerContainerId={'outer-container'} />
+
         <NavLink to="/">
             <img 
               src={logo}
@@ -26,9 +31,9 @@ function Header({}) {
               />
         </NavLink>
 
-        <NavLink to="/" style={{ textDecoration: 'none' }}>
+        {/* <NavLink to="/" style={{ textDecoration: 'none' }}>
           <div className="nav-home">Home</div>
-        </NavLink>
+        </NavLink> */}
 
 
 
