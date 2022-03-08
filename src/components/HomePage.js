@@ -159,13 +159,13 @@ let likesUrl = 'http://localhost:4000/likes'
                   style={{ backgroundImage: 'url(' + character.url + ')' }}
                   className='card'
                 >
-                  <h3>{character.name}</h3>
+                  <h3>{character.name} {character.age}</h3>
                   <img className='img' src={character.image}/>
                   {/* <h4>{character.pronouns}</h4> */}
                   {/* <img className = 'location-icon' src={location}/> */}
                   {/* <div className='location-text'>{character.location}</div> */}
                   <div className='description-text'>{character.description.split('').length >50 ? character.description.slice(0,50)+'...':character.description}</div>
-                  <h4 className='age'>{character.age}</h4>
+                  {/* <h4 className='age'>{character.age}</h4> */}
                   <img className='info-icon' src={info} />
 
                 </div>
