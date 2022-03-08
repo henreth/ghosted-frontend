@@ -15,14 +15,6 @@ import info from '../img/info-icon.png';
     const [lastDirection, setLastDirection] = useState()
     // used for outOfFrame closure
     const currentIndexRef = useRef(currentIndex)
-  
-    // const childRefs = useMemo(
-    //   async () =>
-    //     await Array(db.length)
-    //       .fill(0)
-    //       .map((i) => React.createRef()),
-    //   []
-    // )
     
       const childRefs = Array(db.length)
       .fill(0)
@@ -48,9 +40,7 @@ import info from '../img/info-icon.png';
         setLikes([...likes,lastPerson])
         axios.post(likesUrl,{
           user_id: 0,
-          profile_id: lastPerson.id,
-          user_like: true,
-          profile_like: null})
+          profile_id: lastPerson.id})
         setLiked([...liked,{
           user_id: 0,
           profile_id: lastPerson.id,
@@ -61,9 +51,7 @@ import info from '../img/info-icon.png';
         setRejects([...rejects,lastPerson])
         axios.post(likesUrl,{
           user_id: 0,
-          profile_id: lastPerson.id,
-          user_like: false,
-          profile_like: null})
+          profile_id: lastPerson.id})
         setLiked([...liked,{
           user_id: 0,
           profile_id: lastPerson.id,
@@ -74,7 +62,6 @@ import info from '../img/info-icon.png';
     }
   
     const outOfFrame = (name, idx) => {
-    //   console.log(`${name} (${idx}) left the screen!`, currentIndexRef.current)
       // handle the case in which go back is pressed before card goes outOfFrame
       currentIndexRef.current >= idx && childRefs[idx].current.restoreCard()
     }
@@ -122,7 +109,6 @@ import info from '../img/info-icon.png';
             href='https://fonts.googleapis.com/css?family=Alatsi&display=swap'
             rel='stylesheet'
           />
-          {/* <h1>Ghosted 👻</h1> */}
           <div className='cardContainer'>
             {db.map((character, index) => (
               <Card
