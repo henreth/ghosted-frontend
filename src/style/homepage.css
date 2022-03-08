@@ -74,16 +74,16 @@ h2 {
   width: 380vw;
   max-width: 460px;
   height: 590px;
-  box-shadow: 0px 0px 60px 0px rgba(60, 236, 183, 0.1);
+  box-shadow: 0px 0px 60px 0px rgba(60, 236, 183, 0.014);
   border-radius: 20px;
   background-size: cover;
   background-position: center;
-  cursor: grab;
+  /* cursor: grab; */
 }
 
-.card:active{
+/* .card:active{
   cursor:grabbing;
-}
+} */
 
 .cardContent {
   width: 100%;
@@ -257,6 +257,11 @@ h2 {
   width: 460px;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
+  cursor: grab;
+}
+
+.card .img:active{
+  cursor: grabbing;
 }
 
 .card .info-icon {

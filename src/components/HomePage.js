@@ -9,33 +9,10 @@ import Card from './Card';
 import image from '../img/abe.jpeg';
 import info from '../img/info-icon.png';
 
-let peopleUrl = 'http://localhost:4000/profiles'
-let likesUrl = 'http://localhost:4000/likes'
   
-  function HomePage () {
+  function HomePage ({db,setDB,liked,setLiked,currentIndex,setCurrentIndex,lastPerson,setLastPerson,peopleUrl,likesUrl}) {
 
-    let [db,setDB] = useState([]);
-    let [liked,setLiked] = useState([]);
-
-    
-    useEffect(()=>{
-      axios.get(peopleUrl)
-      .then(r=>{
-        setDB(r.data)
-        console.log(r.data)
-        setCurrentIndex(r.data.length-1)
-        setLastPerson(r.data[r.data.length-1])
-
-      axios.get(likesUrl)
-      .then(r=>{
-        console.log(r.data)
-        setLiked(r.data)})
-    })
-    },[])
-
-    const [currentIndex, setCurrentIndex] = useState(db.length - 1)
     const [lastDirection, setLastDirection] = useState()
-    const [lastPerson, setLastPerson] = useState({})
     // used for outOfFrame closure
     const currentIndexRef = useRef(currentIndex)
   
@@ -177,15 +154,6 @@ let likesUrl = 'http://localhost:4000/likes'
             <img className="undo-button" onClick={() => goBack()} alt='undo' src={undo} />
             <img className="like-button" onClick={() => swipe('right')} alt='heart' src={heart} />
            </div>
-          {/* {lastDirection ? (
-            <h2 key={lastDirection} className='infoText'>
-              You swiped {lastDirection}
-            </h2>
-          ) : (
-            <h2 className='infoText'>
-              Swipe a card or press a button to get Restore Card button visible!
-            </h2>
-          )} */}
         </div>
       </React.Fragment>
     )
