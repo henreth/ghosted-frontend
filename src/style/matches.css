@@ -1,0 +1,30 @@
+.matches-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 370px;  
+}
+
+h1 {
+    margin-top: 50px;
+    font-family: 'Hind', sans-serif;
+    color: #fff;
+    text-shadow: 0px 0px 60px 0px rgba(74, 241, 177, 0.568);
+  }
+
+.matches-carousel{
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    align-items: center;
+    /* width: 1000%; */
+    -ms-overflow-style: none; 
+    scrollbar-width: none;  
+  }
+
+.matches-carousel::-webkit-scrollbar {
+    display: none;
+}
+  

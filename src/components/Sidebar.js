@@ -1,24 +1,36 @@
 import React from 'react';
 import { elastic as Menu } from 'react-burger-menu';
 import '../style/sidebar.css';
+import MiniCard from './MiniCard';
 
-export default props => {
+function Sidebar({matches,setMatches}) {
+
+    let matchesToDisplay = matches.map(match=>{
+        return (
+            //update to fetch individual profiles
+            <MiniCard character={match} />
+        )
+    })
+
   return (
       <div className='menu-test'>
         <Menu>
-            <a className="menu-item" href="/">
+            {/* <a className="menu-item" href="/">
                 Home
             </a>
             <a className="menu-item" href="/profile">
                 Profile
-            </a>
-            <a className="menu-item" href="/matches">
+            </a> */}
+            <a className="large-menu-item" href="/matches">
                 Matches
             </a>
-            <a className="menu-item" href="/settings">
+            {/* <a className="menu-item" href="/settings">
                 Settings
-            </a>
+            </a> */}
+            {matchesToDisplay}
         </Menu>
       </div>
   );
 };
+
+export default Sidebar;

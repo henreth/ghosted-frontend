@@ -84,7 +84,10 @@
   .menu-test{
       position: absolute;
       height: 98%;
-      margin-left: -925px;
-      
+      margin-left: -980px;
     }
-  
+
+.large-menu-item{
+  font-size: xx-large;
+  text-align: center;
+}

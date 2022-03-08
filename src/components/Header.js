@@ -4,7 +4,7 @@ import logo from '../img/ghosted-logo.png'
 import '../style/header.css';
 import Sidebar from './Sidebar'
 
-function Header({}) {
+function Header({matches,setMatches}) {
   
   return (
     <div
@@ -18,6 +18,8 @@ function Header({}) {
         pageWrapId={'page-wrap'} 
         outerContainerId={'outer-container'} 
         width={"500px"}
+        matches = {matches}
+        setMatches = {setMatches}
     />
     <div className="header">
       <div className='header-container'>

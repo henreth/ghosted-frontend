@@ -1,0 +1,29 @@
+.large-cardContainer {
+    width: 390vw;
+    max-width: 460px;
+    height: 490px;
+      margin-bottom: 90px;
+    /* margin-right: auto; */
+  }
+  
+.large-card {
+    /* position: flex; */
+    background-color: rgb(78, 80, 78);
+    width: 380vw;
+    max-width: 460px;
+    height: 590px;  
+    border-radius: 10px;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+  }
+
+.large-img {
+    height: 500px;
+    width: 460px;
+      border-radius: 10px;
+  }
+
+.large-card:hover{
+    box-shadow: 0px 0px 60px 0px rgba(60, 236, 183, 0.295);
+  }

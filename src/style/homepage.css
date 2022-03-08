@@ -53,6 +53,7 @@ h2 {
   /* width: 190vw;
   max-width: 360px;
   height: 400px; */
+  margin-top: 70px;
   width: 390vw;
   max-width: 460px;
   height: 490px;
@@ -275,7 +276,7 @@ h2 {
 }
 
 .card .info-icon:hover {
-  transform: scale(1.15);
+  transform: scale(1.1);
   cursor: pointer;
 }
 
