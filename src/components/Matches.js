@@ -6,7 +6,7 @@ import LargeCard from './LargeCard';
 
 
 function Matches({matches,setMatches}){
-
+    document.title='Ghostd - Matches'
     let matchesToDisplay = matches.map(match=>{
         return (
             //update to fetch individual profiles

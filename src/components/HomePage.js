@@ -20,6 +20,7 @@ let undoUrl = 'http://localhost:4000/undo'
 
   
   function HomePage ({db,setDB,likes,setLikes,currentIndex,setCurrentIndex,lastPerson,setLastPerson,peopleUrl,user}) {
+    document.title='Ghostd - Home'
     let [userx,setUserx] = useState('')
     useEffect(()=>{
       axios.get('http://localhost:4000/user')
@@ -50,13 +51,22 @@ let undoUrl = 'http://localhost:4000/undo'
       setLastDirection(direction)
       updateCurrentIndex(index - 1)
       // console.log(db[index].id)
-      // console.log(id)
+      console.log(id)
 
       if (direction==='right'){
         axios.post(likeUrl,{
           user_id: id,
           profile_id: db[index].id})
-        .then(r=>{console.log(r.data)})
+        .then(r=>{
+          switch(r.data){
+            case false:
+              console.log('No Match')
+              break;
+            case true:
+              alert('You\'ve matched with '+ db[index].name+'!')
+              break;
+          }
+        })
 
       } else if (direction==='left'){
         axios.post(dislikeUrl,{

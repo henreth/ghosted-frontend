@@ -3,8 +3,18 @@ import { NavLink } from "react-router-dom";
 import logo from '../img/ghosted-logo.png' 
 import '../style/header.css';
 import Sidebar from './Sidebar'
+import reset from '../img/reset-icon2.png'
+import axios from "axios";
+
+let undoUrl = 'http://localhost:4000/reset'
+
 
 function Header({matches,setMatches}) {
+
+  function handleResetClick(){
+    axios.patch(undoUrl)
+    .then(window.location.reload())
+  }
   
   return (
     <div
@@ -36,6 +46,12 @@ function Header({matches,setMatches}) {
         {/* <NavLink to="/" style={{ textDecoration: 'none' }}>
           <div className="nav-home">Home</div>
         </NavLink> */}
+
+        <img 
+          src={reset}
+          className='reset-button'
+          onClick={handleResetClick}
+        />
 
 
 

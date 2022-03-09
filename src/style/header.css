@@ -35,7 +35,7 @@
     /* padding-right: 1rem; */
     background-color: transparent;
     align-items: center;
-    margin-left: 350px;
+    margin-left: 470px;
     filter: invert(94%);
 }
 
@@ -48,8 +48,23 @@
     text-decoration: none;
     margin-right: 2rem;
     transition: all 0.2s;
-  }
+}
   
-  .nav-home:hover{
+.nav-home:hover{
     color: rgb(167, 167, 167);
-  }
+}
+
+.reset-button{
+    position: fixed;
+    height: 50px;
+    margin-left: 1150px;
+    transition: all 0.2s;
+    filter: grayscale(100%);
+    opacity: .015;
+}
+
+.reset-button:hover{
+    transform: scale(1.35);
+    opacity: 1;
+    cursor: pointer;
+}
