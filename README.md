@@ -1,7 +1,3 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
 ## Available Scripts
 
 In the project directory, you can run:
@@ -13,11 +9,6 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ### `npm run build`
 
@@ -68,34 +59,3 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-
-
-$_
-
-    let swiped = (direction, character, index,id) => {
-      setLastDirection(direction)
-      updateCurrentIndex(index - 1)
-      // console.log(db[index].id)
-      console.log(id)
-
-      if (direction==='right'){
-        // console.log(lastPerson)
-        // console.log(user)
-
-        axios.post(likeUrl,{
-          user_id: user,
-          profile_id: db[index].id})
-
-      } else if (direction==='left'){
-        // setRejects([...rejects,lastPerson])
-        axios.post(dislikeUrl,{
-          user_id: id,
-          profile_id: db[index].id})
-        // setLikes([...likes,{
-        //   user_id: 0,
-        //   profile_id: lastPerson.id,
-        //   user_like: false,
-        //   profile_like: null}])
-      }
-      setLastPerson(db[index-1])
-    }
