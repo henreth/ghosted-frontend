@@ -8,19 +8,57 @@ import HomePage from './HomePage';
 import Matches from './Matches';
 import SelectedProfile from './SelectedProfile';
 
+//Endpoints:
+
+// 1 < Results
+//gets
+
+//unswiped profiles (base data)
+let unswipesUrl = 'http://localhost:4000/unswiped_profiles'
+
+//everyone (swiped/unswiped)
 let peopleUrl = 'http://localhost:4000/profiles'
+
+// all likes
 let likesUrl = 'http://localhost:4000/likes'
+
+//all matches
 let matchesUrl = 'http://localhost:4000/matches'
+
+// Single results
+//gets the user 
+let userUrl = 'http://localhost:4000/user'
+//gets a specific profile
+let profileUrl = 'http://localhost:4000//profile/:id'
+
+
+// posts 
+// upon swiping either direction, creates a 'like' model for the user and targeted profile
+let likeUrl = 'http://localhost:4000/like'
+let dislikeUrl = 'http://localhost:4000/dislike'
+
+//patches
+// upon clicking the undo button, this resets the 'like' model for the user and targeted profile
+let undoUrl = 'http://localhost:4000/undo'
+
+// patching to this will reset all information
+let resetUrl = 'http://localhost:4000/reset'
 
 
 function App () {
 
   let [db,setDB] = useState([]);
-  let [liked,setLiked] = useState([]);
+  let [likes,setLikes] = useState([]);
   let [matches,setMatches] = useState([]);
+  let [user, setUser] = useState([]);
+
+  const [currentIndex, setCurrentIndex] = useState(db.length - 1)
+  const [lastPerson, setLastPerson] = useState({})
+
+
 
   useEffect(()=>{
-    axios.get(peopleUrl)
+    axios.get(unswipesUrl)
     .then(r=>{
       setDB(r.data)
       // console.log(r.data)
@@ -30,18 +68,21 @@ function App () {
     axios.get(likesUrl)
     .then(r=>{
       // console.log(r.data)
-      setLiked(r.data)})
+      setLikes(r.data)})
 
     axios.get(matchesUrl)
     .then(r=>{
       setMatches(r.data)
-      console.log(r.data)
+      // console.log(r.data)
+    })
+
+    axios.get(userUrl)
+    .then(r=>{
+      setUser(r.data)
+      // console.log(r.data)
     })
   })
   },[])
-
-  const [currentIndex, setCurrentIndex] = useState(db.length - 1)
-  const [lastPerson, setLastPerson] = useState({})
 
   return (
     <React.Fragment>
@@ -54,14 +95,17 @@ function App () {
           <HomePage 
             db = {db}
             setDB={setDB}
-            liked={liked}
-            setLiked={setLiked}
+            likes={likes}
+            setLikes={setLikes}
             currentIndex={currentIndex}
             setCurrentIndex={setCurrentIndex}
             lastPerson={lastPerson}
             setLastPerson={setLastPerson}
             peopleUrl={peopleUrl}
             likesUrl={likesUrl}
+            matches={matches}
+            setMatches={setMatches}
+            user={user}
             />
         </Route>
         <Route path ="/matches">

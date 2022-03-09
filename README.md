@@ -71,3 +71,31 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 
 $_
+
+    let swiped = (direction, character, index,id) => {
+      setLastDirection(direction)
+      updateCurrentIndex(index - 1)
+      // console.log(db[index].id)
+      console.log(id)
+
+      if (direction==='right'){
+        // console.log(lastPerson)
+        // console.log(user)
+
+        axios.post(likeUrl,{
+          user_id: user,
+          profile_id: db[index].id})
+
+      } else if (direction==='left'){
+        // setRejects([...rejects,lastPerson])
+        axios.post(dislikeUrl,{
+          user_id: id,
+          profile_id: db[index].id})
+        // setLikes([...likes,{
+        //   user_id: 0,
+        //   profile_id: lastPerson.id,
+        //   user_like: false,
+        //   profile_like: null}])
+      }
+      setLastPerson(db[index-1])
+    }

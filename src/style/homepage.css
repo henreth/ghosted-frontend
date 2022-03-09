@@ -5,7 +5,23 @@
   width: 100vw;
   min-height: 100vh;
   overflow: hidden;
-  background: linear-gradient(#0c0c0c, #312c2c);
+  /* background: linear-gradient(#0c0c0c, #312c2c); */
+  background: linear-gradient(-40deg, #121312, #3b393a, #0f0f0f, #464948);
+  background-size: 400% 400%;
+  animation: gradient 20s ease infinite;
+}
+
+
+@keyframes gradient {
+0% {
+    background-position: 0% 50%;
+}
+50% {
+    background-position: 100% 50%;
+}
+100% {
+    background-position: 0% 50%;
+}
 }
 
 #root>div {
@@ -89,10 +105,6 @@ h2 {
 .cardContent {
   width: 100%;
   height: 100%;
-}
-
-.swipe:last-of-type {
-
 }
 
 .card h3 {
@@ -279,72 +291,3 @@ h2 {
   transform: scale(1.1);
   cursor: pointer;
 }
-
-/* --------------- */
-
-/* .buttons {
-  margin: 20px;
-  display: flex;
-  margin-top: 6px;
-  margin-left: 225px;
-}
-
-.buttons button {
-  flex-shrink: 0;
-  padding: 10px;
-  border-radius: 5px;
-  border: none;
-  transition: 200ms;
-  font-weight: bolder;
-  width: 160px;
-  box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.10);
-}
-
-@keyframes popup {
-  0%   { transform: scale(1,1) }
-  10%  { transform: scale(1.1,1.1) }
-  30%  { transform: scale(.9,.9) }
-  50%  { transform: scale(1,1) }
-  57%  { transform: scale(1,1) }
-  64%  { transform: scale(1,1) }
-  100% { transform: scale(1,1) }
-}
-
-.like-button  {
-  cursor: pointer;
-  height: 3.3rem;
-  text-decoration: none;
-  transition: all 0.2s;
-}
-
-.like-button:hover{
-  filter: opacity(.5) drop-shadow(0 0 0 pink); 
-  transform: scale(1.15);
-}
-
-.reject-button {
-  cursor: pointer;
-  height: 3.3rem;
-  text-decoration: none;
-  transition: all 0.2s;
-}
-
-.reject-button:hover{
-  filter: opacity(.5) drop-shadow(0 0 0 red); 
-  transform: scale(1.15);
-}
-
-.undo-button {
-  cursor: pointer;
-  height: 3.8rem;
-  text-decoration: none;
-  transition: all 0.2s;
-  margin-left: .75rem;
-  margin-right: .5rem;
-}
-
-.undo-button:hover{
-  filter: brightness(70%) ; 
-  transform: scale(1.15);
-}
- */

@@ -9,8 +9,23 @@ import Card from './Card';
 import image from '../img/abe.jpeg';
 import info from '../img/info-icon.png';
 
+// posts 
+// upon swiping either direction, creates a 'like' model for the user and targeted profile
+let likeUrl = 'http://localhost:4000/like'
+let dislikeUrl = 'http://localhost:4000/dislike'
+
+//patches
+// upon clicking the undo button, this resets the 'like' model for the user and targeted profile
+let undoUrl = 'http://localhost:4000/undo'
+
   
-  function HomePage ({db,setDB,liked,setLiked,currentIndex,setCurrentIndex,lastPerson,setLastPerson,peopleUrl,likesUrl}) {
+  function HomePage ({db,setDB,likes,setLikes,currentIndex,setCurrentIndex,lastPerson,setLastPerson,peopleUrl,user}) {
+    let [userx,setUserx] = useState('')
+    useEffect(()=>{
+      axios.get('http://localhost:4000/user')
+      .then(r=>setUserx(r.data))
+    },[])
+    let id = userx.id
 
     const [lastDirection, setLastDirection] = useState()
     // used for outOfFrame closure
@@ -31,51 +46,38 @@ import info from '../img/info-icon.png';
 
   
     // set last direction and decrease current index
-    const swiped = (direction, character, index) => {
+    function swiped (direction, character, index,id){
       setLastDirection(direction)
       updateCurrentIndex(index - 1)
-      console.log(db[index-1])
+      // console.log(db[index].id)
+      console.log(id)
+
       if (direction==='right'){
-        console.log(lastPerson)
-        setLikes([...likes,lastPerson])
-        axios.post(likesUrl,{
-          user_id: 0,
-          profile_id: lastPerson.id})
-        setLiked([...liked,{
-          user_id: 0,
-          profile_id: lastPerson.id,
-          user_like: true,
-          profile_like: null}])
+        axios.post(likeUrl,{
+          user_id: id,
+          profile_id: db[index].id})
 
       } else if (direction==='left'){
-        setRejects([...rejects,lastPerson])
-        axios.post(likesUrl,{
-          user_id: 0,
-          profile_id: lastPerson.id})
-        setLiked([...liked,{
-          user_id: 0,
-          profile_id: lastPerson.id,
-          user_like: false,
-          profile_like: null}])
+        axios.post(dislikeUrl,{
+          user_id: id,
+          profile_id: db[index].id})
       }
       setLastPerson(db[index-1])
     }
+    
   
     const outOfFrame = (name, idx) => {
       // handle the case in which go back is pressed before card goes outOfFrame
       currentIndexRef.current >= idx && childRefs[idx].current.restoreCard()
     }
-
-    let [likes,setLikes] = useState([])
-    let [rejects,setRejects] = useState([])
   
-    const swipe = async (dir, character) => {
+    let swipe = async (dir, character) => {
       if (canSwipe && currentIndex < db.length) {
         await childRefs[currentIndex].current.swipe(dir) // Swipe the card!
         if (dir==='right'){
-          setLikes([...likes,lastPerson])
+
         } else if (dir==='left'){
-          setRejects([...rejects,lastPerson])
+
         }
         // setLastPerson(db[currentIndex])
       }
@@ -89,13 +91,9 @@ import info from '../img/info-icon.png';
       updateCurrentIndex(newIndex)
       await childRefs[newIndex].current.restoreCard()
       setLastPerson(db[newIndex])
-      axios.patch(likesUrl+`/${lastPerson.likeId}`, {user_like: null})
-      .then(r=>{
-        setLiked(liked.filter(like=>{
-         return like.profile_id == lastPerson.id
-        }))
-
-      })
+      axios.patch(undoUrl,{
+        user_id: id,
+        profile_id: db[newIndex].id})
     }
   
     return (
@@ -115,7 +113,7 @@ import info from '../img/info-icon.png';
                 ref={childRefs[index]}
                 className='swipe'
                 key={character.name}
-                onSwipe={(dir) => swiped(dir, character, index)}
+                onSwipe={(dir) => swiped(dir, character, index,id)}
                 onCardLeftScreen={() => outOfFrame(character.name, index)}
               >
                 <div
