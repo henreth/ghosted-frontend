@@ -29,17 +29,13 @@ function Header({matches,setMatches}) {
       <div className='header-container'>
 
 
-        <NavLink to="/">
+        {/* <NavLink to="/"> */}
             <img 
               src={logo}
               alt="Logo"
               className="header-logo"
               />
-        </NavLink>
-
-        {/* <NavLink to="/" style={{ textDecoration: 'none' }}>
-          <div className="nav-home">Home</div>
-        </NavLink> */}
+        {/* </NavLink> */}
 
         <img 
           src={reset}

@@ -30,6 +30,7 @@ h2 {
 /* #222423 */
 
 .card {
+  margin-top: 50px;
   position: relative;
   /* background-color: rgb(144, 161, 155); */
   background-color: black;
@@ -143,7 +144,7 @@ h2 {
 .buttons {
   margin: 20px;
   display: flex;
-  margin-top: 130px;
+  margin-top: 180px;
   /* z-index: 100; */
 }
 
