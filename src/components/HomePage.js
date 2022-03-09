@@ -19,7 +19,7 @@ let dislikeUrl = 'http://localhost:4000/dislike'
 let undoUrl = 'http://localhost:4000/undo'
 
   
-  function HomePage ({db,setDB,likes,setLikes,currentIndex,setCurrentIndex,lastPerson,setLastPerson,peopleUrl,user}) {
+  function HomePage ({db,setDB,likes,setLikes,currentIndex,setCurrentIndex,lastPerson,setLastPerson,peopleUrl,user,matches,setMatches}) {
     document.title='Ghostd - Home'
     let [userx,setUserx] = useState('')
     useEffect(()=>{
@@ -64,6 +64,7 @@ let undoUrl = 'http://localhost:4000/undo'
               break;
             case true:
               alert('You\'ve matched with '+ db[index].name+'!')
+              setMatches([...matches,db[index]])
               break;
           }
         })
