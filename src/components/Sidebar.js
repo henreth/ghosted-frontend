@@ -14,6 +14,7 @@ function Sidebar({matches,setMatches}) {
                 character={match} />
         )
     })
+    
 
   return (
       <div className='menu-test'>
@@ -27,7 +28,7 @@ function Sidebar({matches,setMatches}) {
             <a className="large-menu-item" href="/">Home</a>
             <div className='sidebar-title'> 
                 <a className="large-menu-item" href="/matches">Matches</a>
-                <img className="mini-heart" src={heart} />
+                {/* <img className="mini-heart" src={heart} /> */}
             </div>
             
             {/* <a className="menu-item" href="/settings">

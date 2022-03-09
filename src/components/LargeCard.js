@@ -2,14 +2,14 @@ import React from 'react'
 import '../style/largecard.css';
 
 
-function LargeCard ({character}) {
+function LargeCard ({profile}) {
     return (
-        <div className='med-cardContainer'>
+        <div className='large-cardContainer'>
                 <div
-                    className='med-card'
+                    className='large-card'
                 >
-                    {/* <div className='mini-name'>{character.name}</div> */}
-                    <img className='med-img' src={character.image}/>
+                    {/* <div className='mini-name'>{profile.name}</div> */}
+                    <img className='large-img' src={profile.image}/>
                 </div>
       </div>
     )

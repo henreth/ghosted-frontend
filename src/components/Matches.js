@@ -10,7 +10,7 @@ function Matches({matches,setMatches}){
     let matchesToDisplay = matches.map(match=>{
         return (
             //update to fetch individual profiles
-            <LargeCard character={match} />
+            <MediumCard key={match.name} character={match} />
         )
     })
 
