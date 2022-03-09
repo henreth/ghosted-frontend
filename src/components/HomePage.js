@@ -1,9 +1,9 @@
 import React, { useState, useMemo, useRef, useEffect } from 'react'
 import '../style/homepage.css';
 import axios from 'axios';
-import undo from '../img/undo.png';
+import undo from '../img/reboot-icon.png';
 import heart from '../img/real_heart.png';
-import reject from '../img/reject_bones2.png';
+import reject from '../img/bones-icon.png';
 import location from '../img/location_icon.png';
 import Card from './Card';
 import image from '../img/abe.jpeg';
@@ -50,12 +50,13 @@ let undoUrl = 'http://localhost:4000/undo'
       setLastDirection(direction)
       updateCurrentIndex(index - 1)
       // console.log(db[index].id)
-      console.log(id)
+      // console.log(id)
 
       if (direction==='right'){
         axios.post(likeUrl,{
           user_id: id,
           profile_id: db[index].id})
+        .then(r=>{console.log(r.data)})
 
       } else if (direction==='left'){
         axios.post(dislikeUrl,{

@@ -6,9 +6,9 @@
   min-height: 100vh;
   overflow: hidden;
   /* background: linear-gradient(#0c0c0c, #312c2c); */
-  background: linear-gradient(-40deg, #121312, #3b393a, #0f0f0f, #464948);
+  background: linear-gradient(-40deg, #121312, #4d4b4c, #0f0f0f, #464948);
   background-size: 400% 400%;
-  animation: gradient 20s ease infinite;
+  animation: gradient 50s ease infinite;
 }
 
 
@@ -91,16 +91,28 @@ h2 {
   width: 380vw;
   max-width: 460px;
   height: 590px;
-  box-shadow: 0px 0px 60px 0px rgba(60, 236, 183, 0.014);
+  /* box-shadow: 0px 0px 60px 0px rgba(60, 236, 183, 0.062); */
   border-radius: 20px;
   background-size: cover;
   background-position: center;
   /* cursor: grab; */
+  box-shadow: -80px -15px 25px rgba(0,0,0,0.020);
+  -webkit-transform: skew(-36deg);
+  -moz-transform: skew(-36deg);
+  -ms-transform: skew(-36deg);
+  -o-transform: skew(-36deg);
+  transform: skew(0deg);
+  -webkit-transform-origin: 0% 100%;
+  -moz-transform-origin: 0% 100%;
+  -ms-transform-origin: 0% 100%;
+  -o-transform-origin: 0% 100%;
+  transform-origin: 0% 100%;
+
 }
 
-/* .card:active{
-  cursor:grabbing;
-} */
+.card:active{
+  box-shadow: 0px 0px 60px 0px rgba(60, 236, 183, 0.384);
+}
 
 .cardContent {
   width: 100%;
@@ -178,7 +190,7 @@ h2 {
   margin: 20px;
   display: flex;
   margin-top: 130px;
-  z-index: 100;
+  /* z-index: 100; */
 }
 
 .buttons button {
@@ -230,6 +242,7 @@ h2 {
   text-decoration: none;
   transition: all 0.2s;
   /* animation: pump 1s linear infinite; */
+  /* border-radius: 0 10% 0 0; */
 }
 
 .like-button:hover{
@@ -243,6 +256,7 @@ h2 {
   height: 4rem;
   text-decoration: none;
   transition: all 0.2s;
+  /* border-radius: 100px; */
 }
 
 .reject-button:hover{
@@ -251,13 +265,15 @@ h2 {
 }
 
 .undo-button {
-  filter: brightness(120%);
+  filter: brightness(85%);
   cursor: pointer;
   height: 4.8rem;
   text-decoration: none;
   transition: all 0.2s;
   margin-left: 2.75rem;
   margin-right: 2.5rem;
+  border-radius: 100px;
+  z-index: 0;
 }
 
 .undo-button:hover{
@@ -278,6 +294,7 @@ h2 {
 }
 
 .card .info-icon {
+  filter: brightness(100%);
   filter: invert(100%);
   position: absolute;
   bottom: 0;
