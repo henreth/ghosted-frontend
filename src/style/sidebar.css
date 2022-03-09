@@ -81,13 +81,30 @@
     color: #ffffff;
   }
 
-  .menu-test{
-      position: absolute;
-      height: 98%;
-      margin-left: -980px;
-    }
+.menu-test{
+  position: absolute;
+  height: 98%;
+  max-height: fit-content;
+  /* margin-left: -325px; */
+}
 
 .large-menu-item{
   font-size: xx-large;
   text-align: center;
+}
+
+.minicards-container {
+  margin-left:35px;
+  align-items: flex;
+  width: 150%;
+  max-height: 95%;
+  overflow-y: scroll;
+
+  -ms-overflow-style: none; 
+  scrollbar-width: none;  
+
+}
+
+.minicards-container::-webkit-scrollbar {
+  display: none;
 }

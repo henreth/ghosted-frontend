@@ -7,7 +7,6 @@ function MiniCard ({character}) {
     return (
         <div className='mini-cardContainer'>
                 <div
-                    style={{ backgroundImage: 'url(' + character.url + ')' }}
                     className='mini-card'
                 >
                     {/* <div className='mini-name'>{character.name}</div> */}

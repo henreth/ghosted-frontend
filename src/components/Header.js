@@ -17,13 +17,7 @@ function Header({matches,setMatches}) {
   }
   
   return (
-    <div
-      style={{
-        borderBottom: "2px solid black",
-        paddingBottom: "10px",
-        marginBottom: "12px",
-      }}
-    >
+    <div>
     <Sidebar 
         pageWrapId={'page-wrap'} 
         outerContainerId={'outer-container'} 

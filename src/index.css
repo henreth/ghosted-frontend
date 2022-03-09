@@ -3,9 +3,9 @@ body{
 }
 
 #root {
-  text-align: center;
+  /* text-align: center;
   display: flex;
-  justify-content: center;
+  justify-content: center; */
   width: 100vw;
   min-height: 100vh;
   overflow: hidden;
@@ -28,7 +28,7 @@ body{
 }
 }
 
-#root>div {
+/* #root>div {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -40,7 +40,7 @@ body{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
+} */
 
 .row {
   flex-direction: row !important;

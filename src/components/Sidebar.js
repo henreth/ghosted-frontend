@@ -27,7 +27,9 @@ function Sidebar({matches,setMatches}) {
             {/* <a className="menu-item" href="/settings">
                 Settings
             </a> */}
+            <div className='minicards-container'> 
             {matchesToDisplay}
+            </div>
         </Menu>
       </div>
   );

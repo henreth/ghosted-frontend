@@ -90,36 +90,38 @@ function App () {
         matches = {matches}
         setMatches = {setMatches}
         />
+      <div className='main-page'>
       <Switch>
-        <Route exact path="/">
-          <HomePage 
-            db = {db}
-            setDB={setDB}
-            likes={likes}
-            setLikes={setLikes}
-            currentIndex={currentIndex}
-            setCurrentIndex={setCurrentIndex}
-            lastPerson={lastPerson}
-            setLastPerson={setLastPerson}
-            peopleUrl={peopleUrl}
-            likesUrl={likesUrl}
-            matches={matches}
-            setMatches={setMatches}
-            user={user}
-            />
-        </Route>
-        <Route path ="/matches">
-            <Matches 
-                matches = {matches}
-                setMatches = {setMatches} 
-            />
-        </Route>
-        <Route exact path ='/match/:profileId'>
-            <SelectedProfile
-            />
-        </Route>
+          <Route exact path="/">
+            <HomePage 
+              db = {db}
+              setDB={setDB}
+              likes={likes}
+              setLikes={setLikes}
+              currentIndex={currentIndex}
+              setCurrentIndex={setCurrentIndex}
+              lastPerson={lastPerson}
+              setLastPerson={setLastPerson}
+              peopleUrl={peopleUrl}
+              likesUrl={likesUrl}
+              matches={matches}
+              setMatches={setMatches}
+              user={user}
+              />
+          </Route>
+          <Route path ="/matches">
+              <Matches 
+                  matches = {matches}
+                  setMatches = {setMatches} 
+              />
+          </Route>
+          <Route exact path ='/match/:profileId'>
+              <SelectedProfile
+              />
+          </Route>
 
-      </Switch>
+        </Switch>
+      </div>
 
     </React.Fragment>
   )

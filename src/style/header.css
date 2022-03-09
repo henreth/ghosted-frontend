@@ -31,12 +31,15 @@
 
 
 .header-logo {
+    position: absolute;
     height: 50px;
     /* padding-right: 1rem; */
     background-color: transparent;
     align-items: center;
-    margin-left: 470px;
+    margin-left: 600px;
+    margin-top: -20px;
     filter: invert(94%);
+    z-index: 10;
 }
 
 .nav-home {
@@ -57,7 +60,7 @@
 .reset-button{
     position: fixed;
     height: 50px;
-    margin-left: 1150px;
+    margin-left: 1275px;
     transition: all 0.2s;
     filter: grayscale(100%);
     opacity: .015;
