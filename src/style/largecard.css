@@ -9,6 +9,8 @@
 .large-card {
     /* position: flex; */
     /* background-color: rgb(78, 80, 78); */
+    display: flex;
+    flex-direction: row;
     background-color: black;
     width: 850px;
     height: 500px;
@@ -21,6 +23,9 @@
   }
 
 .large-img {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
     height: 500px;
     width: 460px;
     border-top-left-radius: 10px;
@@ -30,3 +35,63 @@
 .large-card:hover{
     box-shadow: 0px 0px 60px 0px rgba(60, 236, 183, 0.295);
   }
+
+.location-icon-here {
+   filter: invert(100%);
+   height: 70%;
+  }
+
+.info-box {
+  display: flex;
+  justify-content: top, center;
+  text-align: center;
+  flex-direction: column;
+   padding-left: 5%;
+  padding-right: 5%; 
+}
+
+.card-title {
+  color: white;
+  display: flex;
+  justify-content: left;
+  font-size: 400%;
+  padding-bottom: 0%;
+  margin-top: 5%;
+  margin-bottom: 1%;
+}
+
+.card-title-long {
+  color: white;
+  display: flex;
+  justify-content: left;
+  font-size: 300%;
+  padding-bottom: 0%;
+  margin-top: 5%;
+  margin-bottom: 1%;
+}
+
+.card-location {
+margin-top: 2%;
+color: white;
+display: flex;
+justify-content: left;
+}
+
+.card-subtitle {
+color: white;
+display: flex;
+justify-content: center;
+
+}
+
+.card-text {
+  color: white;
+display: flex;
+justify-content: left;
+margin-top: 10%;
+font-size: 120%;
+}
+
+.button {
+  margin-top: 40%;
+}
