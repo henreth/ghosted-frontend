@@ -68,15 +68,17 @@ function MatchModal({ setShowMatchModal}) {
                                     {/* <div style={{marginTop:'100px'}}></div> */}
 
                 <BS.Modal.Body style={{ padding: '80px',paddingLeft:'60px',textAlign: "center", opacity: '1', color: 'white', background: ''}}>
-                    <strong style={{fontSize:'70px'}}>IT'S A MATCH!</strong>
-                    <p>Their early work was a little too new wave for my tastes, but when Sports came out in '83,</p>
-                    <p>The whole album has a clear, crisp sound, and a new sheen of consummate professionalism that really gives the songs a big boost.</p>
-                    <p>He's been compared to Elvis Costello, but I think Huey has a far more bitter, cynical sense of humor.</p>
-                    <hr></hr>
-                    <div style={{marginTop:'340px'}}></div>
-                    {/* <button>test</button> */}
-                    <BS.Button variant='Secondary' onClick={handleGoToProfile}>Go to Profile</BS.Button>
-                    <BS.Button variant='secondary' onClick={handleClose}>EXIT</BS.Button>
+                    <div className='text-holder'>
+                        <strong style={{fontSize:'70px'}}>IT'S A MATCH!</strong>
+                        <p>Their early work was a little too new wave for my tastes, but when Sports came out in '83,</p>
+                        <p>The whole album has a clear, crisp sound, and a new sheen of consummate professionalism that really gives the songs a big boost.</p>
+                        <p>He's been compared to Elvis Costello, but I think Huey has a far more bitter, cynical sense of humor.</p>
+                        <hr></hr>
+                        <div style={{marginTop:'340px'}}></div>
+                        {/* <button>test</button> */}
+                        <BS.Button variant='Secondary' onClick={handleGoToProfile}>Go to Profile</BS.Button>
+                        <BS.Button variant='secondary' onClick={handleClose}>EXIT</BS.Button>
+                    </div>
                 </BS.Modal.Body>
             </BS.Modal>
     )

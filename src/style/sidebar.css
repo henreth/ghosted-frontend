@@ -92,6 +92,7 @@
   font-size: xx-large;
   text-align: center;
   text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .minicards-container {
@@ -117,12 +118,4 @@
   45% {transform: scale(1);}
   60% {transform: scale(0.95);}
   100% {transform: scale(0.9);}
-}
-.mini-heart{
-  margin-left: 10px;
-  height: 55px;
-  margin-bottom: 10px;
-  animation: pump 3s linear infinite;
-  opacity: 0.5;
-  filter: opacity(.5) drop-shadow(0 0 0 red); 
 }
