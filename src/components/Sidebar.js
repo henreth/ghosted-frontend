@@ -19,7 +19,7 @@ function Sidebar({matches,setMatches,user}) {
     
 
   return (
-      <div className='menu-test'>
+      <div className='menu-holder'>
         <Menu>
 
             <img src={userPhoto} className='profile-photo-sidebar'/>

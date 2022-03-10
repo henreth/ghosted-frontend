@@ -6,7 +6,8 @@ import Sidebar from './Sidebar'
 import reset from '../img/reset-icon2.png'
 import axios from "axios";
 import userPhoto from '../img/userPhoto.jpeg'
-import homeIcon from '../img/home-icon.png'
+import homeIcon from '../img/dog-house-icon.png'
+import helpIcon from '../img/help-icon.png'
 
 
 let undoUrl = 'http://localhost:4000/reset'
@@ -21,6 +22,10 @@ function Header({matches,setMatches, user}) {
     .then(r=>{
       history.push('/')
       window.location.reload()})
+  }
+
+  function handleHomeClick(){
+    history.push('/')
   }
   
   return (
@@ -49,10 +54,17 @@ function Header({matches,setMatches, user}) {
           src={userPhoto}
           className='profile-photo'
           /> */}
+          
+      <img 
+          src={helpIcon}
+          className='help-icon'
+          onClick={handleHomeClick}
+          />
 
       <img 
           src={homeIcon}
           className='home-icon'
+          onClick={handleHomeClick}
           />
 
 

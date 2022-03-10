@@ -81,11 +81,10 @@
     color: #ffffff;
   }
 
-.menu-test{
+.menu-holder{
   position: absolute;
   height: 98%;
   max-height: fit-content;
-  /* margin-left: -325px; */
 }
 
 .large-menu-item{
@@ -105,8 +104,9 @@
 }
 
 .minicards-container {
-  margin-left:35px;
+  margin-left:-35px;
   align-items: flex;
+  position: absolute;
   width: 150%;
   max-height: 95%;
   overflow-y: scroll;

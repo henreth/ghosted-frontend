@@ -3,9 +3,6 @@ import '../style/largecard.css';
 import location from '../img/location_icon.png';
 
 
-
-
-
 function LargeCard ({profile,nameLength,locationLength}) {
 
     return (
