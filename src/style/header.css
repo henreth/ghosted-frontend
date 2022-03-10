@@ -103,7 +103,8 @@
 }
 
 .home-icon:hover{
-    filter: opacity(.50) drop-shadow(0 0 0 #00a984); 
+    /* filter: opacity(.50) drop-shadow(0 0 0 #00a984);  */
+    opacity: .75;
     cursor: pointer;
 }
 
@@ -119,7 +120,8 @@
 }
 
 .help-icon:hover{
-    filter: opacity(.35) drop-shadow(0 0 0 #00a984); 
+    /* filter: opacity(.35) drop-shadow(0 0 0 #00a984);  */
+    opacity: .75;
     cursor: pointer;
 }
 

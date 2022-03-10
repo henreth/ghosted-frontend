@@ -16,7 +16,7 @@ function MediumCard ({character}) {
                 <div
                     className='med-card'
                 >
-                    {/* <div className='mini-name'>{character.name}</div> */}
+                    {/* <div className='med-name'>{character.name}</div> */}
                     <img className='med-img' onClick={handleInfoClick} src={character.image}/>
 
                 </div>

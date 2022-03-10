@@ -2,18 +2,19 @@ import React, { useState, useEffect } from "react";
 import { NavLink,useHistory } from "react-router-dom";
 import logo from '../img/ghosted-logo.png' 
 import '../style/header.css';
-import Sidebar from './Sidebar'
-import reset from '../img/reset-icon2.png'
+import Sidebar from './Sidebar';
+import reset from '../img/reset-icon2.png';
 import axios from "axios";
-import userPhoto from '../img/userPhoto.jpeg'
-import homeIcon from '../img/dog-house-icon.png'
-import helpIcon from '../img/help-icon.png'
+import userPhoto from '../img/userPhoto.jpeg';
+import homeIcon from '../img/dog-house-icon.png';
+import helpIcon from '../img/help-icon.png';
+import InfoModal from './InfoModal';
 
 
 let undoUrl = 'http://localhost:4000/reset'
 
 
-function Header({matches,setMatches, user}) {
+function Header({matches,setMatches, user,showInfoModal, setShowInfoModal}) {
 
   let history = useHistory();
 
@@ -27,6 +28,10 @@ function Header({matches,setMatches, user}) {
   function handleHomeClick(){
     history.push('/')
   }
+
+  function handleInfoClick(){
+    setShowInfoModal(!showInfoModal)
+  }
   
   return (
     <div>
@@ -38,6 +43,8 @@ function Header({matches,setMatches, user}) {
         setMatches = {setMatches}
         user={user}
     />
+  {showInfoModal? <InfoModal user={user} setInfoModal={setShowInfoModal}/> : null}
+
     <div className="header">
       <div className='header-container'>
 
@@ -58,7 +65,7 @@ function Header({matches,setMatches, user}) {
       <img 
           src={helpIcon}
           className='help-icon'
-          onClick={handleHomeClick}
+          onClick={handleInfoClick}
           />
 
       <img 

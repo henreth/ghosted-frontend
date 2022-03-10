@@ -55,8 +55,7 @@ function App () {
   const [lastPerson, setLastPerson] = useState({})
 
   let [showMatchModal, setShowMatchModal] = useState(false);
-
-
+  let [showInfoModal, setShowInfoModal] = useState(true);
 
 
   useEffect(()=>{
@@ -93,6 +92,8 @@ function App () {
         setMatches = {setMatches}
         showMatchModal={showMatchModal}
         setShowMatchModal={setShowMatchModal}
+        showInfoModal={showInfoModal}
+        setShowInfoModal={setShowInfoModal}
         user={user}
         />
       <div className='main-page'>
