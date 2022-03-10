@@ -8,7 +8,28 @@ import location from '../img/location_icon.png';
 
 function Sidebar({matches,setMatches,user}) {
 
-    let matchesToDisplay = matches.map(match=>{
+    let matchesFirstColumn = matches.filter((match,index)=>index%2===0)
+    let matchesSecondColumn = matches.filter((match,index)=>index%2!==0)
+
+    let matchesToDisplay = matches.map((match)=>{
+        return (
+            //update to fetch individual profiles
+            <MiniCard 
+                key={match.name}
+                character={match} />
+        )
+    })
+
+    let firstColumnToDisplay = matchesFirstColumn.map((match)=>{
+        return (
+            //update to fetch individual profiles
+            <MiniCard 
+                key={match.name}
+                character={match} />
+        )
+    })
+
+    let secondColumnToDisplay = matchesSecondColumn.map((match)=>{
         return (
             //update to fetch individual profiles
             <MiniCard 
@@ -35,8 +56,12 @@ function Sidebar({matches,setMatches,user}) {
                 Settings
             </a> */}
             <div className='minicards-container'> 
-            {matchesToDisplay}
+                {firstColumnToDisplay}
             </div>
+            <div className='minicards-container-secondColumn'>
+                {secondColumnToDisplay}
+            </div>
+
         </Menu>
       </div>
   );

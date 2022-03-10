@@ -104,21 +104,40 @@
 }
 
 .minicards-container {
-  margin-left:-35px;
-  align-items: flex;
+  margin-left:-25px;
+  /* align-items: flex;
+  flex-direction: row; */
   position: absolute;
   width: 150%;
-  max-height: 95%;
+  max-height: 80%;
   overflow-y: scroll;
 
   -ms-overflow-style: none; 
   scrollbar-width: none;  
-
 }
 
 .minicards-container::-webkit-scrollbar {
   display: none;
 }
+
+.minicards-container-secondColumn {
+  margin-left: 120px;
+  /* align-items: flex;
+  flex-direction: row; */
+  position: absolute;
+  width: 150%;
+  max-height: 80%;
+  overflow-y: scroll;
+
+  -ms-overflow-style: none; 
+  scrollbar-width: none;  
+}
+
+.minicards-container-secondColumn::-webkit-scrollbar {
+  display: none;
+}
+
+
 
 @keyframes pump {
   0% {transform: scale(0.95);}
