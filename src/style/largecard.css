@@ -77,6 +77,14 @@ display: flex;
 justify-content: left;
 }
 
+.card-location-long {
+margin-top: 2%;
+color: white;
+display: flex;
+justify-content: left;
+font-size: 150%;
+}
+
 .card-subtitle {
 color: white;
 display: flex;
@@ -93,5 +101,5 @@ font-size: 120%;
 }
 
 .button {
-  margin-top: 40%;
+  margin-top: 10%;
 }
