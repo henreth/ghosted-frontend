@@ -63,16 +63,19 @@ function MatchModal({ setShowMatchModal}) {
                 show={openMatchModal}
                 onHide={handleClose}
                 // backdrop='static'
-                style={{ backgroundColor: 'black', opacity:'0.75', width:'100%', position:'absolute', marginTop:'-700px'}}
+                style={{ borderRadius: '30px', backgroundColor: 'rgba(0, 0, 0, 0.75)', width:'50%', position:'absolute',marginLeft:'350px', marginTop:'-900px'}}
             >
-                <BS.Modal.Body style={{ textAlign: "center", opacity: '1', color: 'white', background: ''}}>
-                    <strong style={{fontSize:'75px', marginTop:'-300px'}}>YOU MATCHED!</strong>
+                                    {/* <div style={{marginTop:'100px'}}></div> */}
+
+                <BS.Modal.Body style={{ padding: '80px',paddingLeft:'60px',textAlign: "center", opacity: '1', color: 'white', background: ''}}>
+                    <strong style={{fontSize:'70px'}}>IT'S A MATCH!</strong>
                     <p>Their early work was a little too new wave for my tastes, but when Sports came out in '83,</p>
                     <p>The whole album has a clear, crisp sound, and a new sheen of consummate professionalism that really gives the songs a big boost.</p>
                     <p>He's been compared to Elvis Costello, but I think Huey has a far more bitter, cynical sense of humor.</p>
                     <hr></hr>
+                    <div style={{marginTop:'340px'}}></div>
                     {/* <button>test</button> */}
-                    <BS.Button variant='secondary' onClick={handleGoToProfile}>Go to Profile</BS.Button>
+                    <BS.Button variant='Secondary' onClick={handleGoToProfile}>Go to Profile</BS.Button>
                     <BS.Button variant='secondary' onClick={handleClose}>EXIT</BS.Button>
                 </BS.Modal.Body>
             </BS.Modal>
