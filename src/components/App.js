@@ -94,6 +94,7 @@ function App () {
         setMatches = {setMatches}
         showMatchModal={showMatchModal}
         setShowMatchModal={setShowMatchModal}
+        user={user}
         />
       <div className='main-page'>
       <Switch>

@@ -12,7 +12,7 @@ import userPhoto from '../img/userPhoto.jpeg'
 let undoUrl = 'http://localhost:4000/reset'
 
 
-function Header({matches,setMatches,showMatchModal, setShowMatchModal}) {
+function Header({matches,setMatches,showMatchModal, setShowMatchModal, user}) {
 
   function handleResetClick(){
     axios.patch(undoUrl)
@@ -27,6 +27,7 @@ function Header({matches,setMatches,showMatchModal, setShowMatchModal}) {
         width={"500px"}
         matches = {matches}
         setMatches = {setMatches}
+        user={user}
     />
     <div className="header">
       <div className='header-container'>
@@ -40,10 +41,10 @@ function Header({matches,setMatches,showMatchModal, setShowMatchModal}) {
               />
         {/* </NavLink> */}
 
-        <img 
+        {/* <img 
           src={userPhoto}
           className='profile-photo'
-          />
+          /> */}
 
         <img 
           src={reset}

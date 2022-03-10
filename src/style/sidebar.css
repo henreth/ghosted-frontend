@@ -89,10 +89,19 @@
 }
 
 .large-menu-item{
+  margin-bottom: 20px;
   font-size: xx-large;
   text-align: center;
   text-decoration: none;
   font-family: 'Montserrat', sans-serif;
+}
+
+.spacing-menu-item{
+  font-size: xx-large;
+  text-align: center;
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  color: transparent;
 }
 
 .minicards-container {
@@ -119,3 +128,49 @@
   60% {transform: scale(0.95);}
   100% {transform: scale(0.9);}
 }
+
+.profile-name-sidebar{
+  position: absolute;
+  margin-top: -75px;
+  margin-left: 63px;
+  opacity: 0.5;
+}
+
+
+.profile-location-sidebar{
+  font-size: smaller;
+  position: absolute;
+  margin-top: -42px;
+  margin-left: 80px;
+  opacity: 0.5;
+}
+
+
+.profile-photo-sidebar{
+  position: absolute;
+  height: 70px;
+  border-radius: 30px;
+  border-style: solid;
+  border: 1px solid whitesmoke;
+  opacity: 0.5;
+  border-width: 2.5px;
+  margin-top: -30px;
+  margin-left: -20px;
+  filter:grayscale(100);
+  transition: .5s
+}
+
+.profile-photo-sidebar:hover{
+  opacity: 1;
+  cursor: pointer;
+}
+
+.profile-location-icon-sidebar {
+  filter: invert(100%);
+  position: absolute;
+  height: 17px;
+  margin-top: -42px;
+  margin-left: 60px;
+  opacity: 0.5;
+}
+
