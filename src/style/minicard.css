@@ -16,6 +16,13 @@
     background-position: center;
     cursor: pointer;
   }
+
+  .mini-name{
+    position: absolute;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 100px;
+    margin-left: 10px;
+  }
     
   .mini-cardContent {
     width: 100%;
@@ -30,4 +37,20 @@
   
   .mini-card:hover{
     box-shadow: 0px 0px 10px 0px rgba(60, 236, 183, 0.295);
+  }
+
+  .cancel-button{
+    position: absolute;
+    height: 15px;
+    filter: invert(80%);
+    margin-left: -10px;
+    margin-top: -1px;
+    opacity: 0;
+    transition: .25s;
+    z-index: 100;
+  }
+
+  .cancel-button:hover{
+    opacity: 1;
+    transform: scale(1.15);
   }

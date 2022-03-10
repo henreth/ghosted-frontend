@@ -13,6 +13,8 @@ body{
   background: linear-gradient(-40deg, #121312, #4d4b4c, #0f0f0f, #464948);
   background-size: 400% 400%;
   animation: gradient 50s ease infinite;
+  font-family: 'Montserrat', sans-serif;
+
 }
 
 
