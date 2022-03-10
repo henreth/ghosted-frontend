@@ -2,9 +2,11 @@ import React from 'react';
 import { elastic as Menu } from 'react-burger-menu';
 import '../style/sidebar.css';
 import MiniCard from './MiniCard';
-import heart from '../img/real_heart.png';
+import userPhoto from '../img/melting-ghost.png'
+import location from '../img/location_icon.png';
 
-function Sidebar({matches,setMatches}) {
+
+function Sidebar({matches,setMatches,user}) {
 
     let matchesToDisplay = matches.map(match=>{
         return (
@@ -19,16 +21,14 @@ function Sidebar({matches,setMatches}) {
   return (
       <div className='menu-test'>
         <Menu>
-            {/* <a className="menu-item" href="/">
-                Home
-            </a>
-            <a className="menu-item" href="/profile">
-                Profile
-            </a> */}
-            <a className="large-menu-item" href="/">Home</a>
+
+            <img src={userPhoto} className='profile-photo-sidebar'/>
+            <a className="spacing-menu-item">'</a>
+            <div className='profile-name-sidebar'>{user.name}</div>
+            <img className = 'profile-location-icon-sidebar' src={location}/>
+            <div className='profile-location-sidebar'>{user.location}</div>
             <div className='sidebar-title'> 
                 <a className="large-menu-item" href="/matches">Matches</a>
-                {/* <img className="mini-heart" src={heart} /> */}
             </div>
             
             {/* <a className="menu-item" href="/settings">

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import { Route, Switch } from "react-router-dom";
-
 import axios from 'axios';
 import '../style/app.css';
 import NavBar from './Header';
@@ -94,6 +93,7 @@ function App () {
         setMatches = {setMatches}
         showMatchModal={showMatchModal}
         setShowMatchModal={setShowMatchModal}
+        user={user}
         />
       <div className='main-page'>
       <Switch>

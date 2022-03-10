@@ -7,8 +7,8 @@
 }
 
 h1 {
-    margin-top: 50px;
-    font-family: 'Hind', sans-serif;
+    margin-top: 90px;
+    font-family: 'Montserrat', sans-serif;
     color: #fff;
     text-shadow: 0px 0px 60px 0px rgba(74, 241, 177, 0.568);
   }
@@ -26,5 +26,15 @@ h1 {
 
 .matches-carousel::-webkit-scrollbar {
     display: none;
+}
+
+.mini-heart{
+  position: absolute;
+  margin-left: 100px;
+  height: 55px;
+  margin-top: -120px;
+  animation: pump 3s linear infinite;
+  opacity: 0.75;
+  filter: opacity(.5) drop-shadow(0 0 0 red); 
 }
   

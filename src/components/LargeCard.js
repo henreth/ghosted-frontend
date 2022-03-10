@@ -4,7 +4,9 @@ import location from '../img/location_icon.png';
 
 
 
-function LargeCard ({profile}) {
+
+
+function LargeCard ({profile,nameLength,locationLength}) {
 
     return (
         <div className='large-cardContainer'>

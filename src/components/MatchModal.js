@@ -2,10 +2,12 @@ import * as BS from 'react-bootstrap'
 import React,{ useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import confetti from "canvas-confetti";
-import '../style/fakemodal.css'
+import '../style/matchmodal.css'
+import userPhoto from '../img/userPhoto.jpeg'
 
 
-function MatchModal({ setShowMatchModal}) {
+
+function MatchModal({ setShowMatchModal, user, profile}) {
     const [openMatchModal, setOpenMatchModal] = useState(true)
     const history = useHistory()
 
@@ -16,14 +18,14 @@ function MatchModal({ setShowMatchModal}) {
     }
 
     function handleGoToProfile() {
-        history.push('/match/')
+        history.push('/match/'+profile.id)
         history.go(0)
         setShowMatchModal(false)
     }
 
-    var count = 200;
-    var defaults = {
-        origin: { y: 0.7 }
+    let count = 200;
+    let defaults = {
+        origin: { y: 0.9 }
     };
 
     function fire(particleRatio, opts) {
@@ -63,20 +65,21 @@ function MatchModal({ setShowMatchModal}) {
                 show={openMatchModal}
                 onHide={handleClose}
                 // backdrop='static'
-                style={{ borderRadius: '30px', backgroundColor: 'rgba(0, 0, 0, 0.75)', width:'50%', position:'absolute',marginLeft:'350px', marginTop:'-900px'}}
+                style={{ borderRadius: '30px', backgroundColor: 'rgba(0, 0, 0, 0.75)', width:'50%', position:'absolute',marginLeft:'350px', marginTop:'-780px'}}
             >
                                     {/* <div style={{marginTop:'100px'}}></div> */}
 
-                <BS.Modal.Body style={{ padding: '80px',paddingLeft:'60px',textAlign: "center", opacity: '1', color: 'white', background: ''}}>
-                    <strong style={{fontSize:'70px'}}>IT'S A MATCH!</strong>
-                    <p>Their early work was a little too new wave for my tastes, but when Sports came out in '83,</p>
-                    <p>The whole album has a clear, crisp sound, and a new sheen of consummate professionalism that really gives the songs a big boost.</p>
-                    <p>He's been compared to Elvis Costello, but I think Huey has a far more bitter, cynical sense of humor.</p>
-                    <hr></hr>
-                    <div style={{marginTop:'340px'}}></div>
-                    {/* <button>test</button> */}
-                    <BS.Button variant='Secondary' onClick={handleGoToProfile}>Go to Profile</BS.Button>
-                    <BS.Button variant='secondary' onClick={handleClose}>EXIT</BS.Button>
+                <BS.Modal.Body style={{ padding: '80px',paddingLeft:'70px',textAlign: "center", opacity: '1', color: 'white', background: ''}}>
+                    <div className='text-holder'>
+                        <strong style={{marginLeft:'35px', fontSize:'70px'}}>IT'S A MATCH!</strong>
+                        <strong style={{marginLeft: '40px', fontSize:'20px'}}> YOU AND {profile.name.toUpperCase()} LIKED ONE ANOTHER</strong>
+                        <img className = 'match-user-image' src={userPhoto}/>
+                        <img className = 'match-profile-image' src={profile.image}/>
+                        <hr></hr>
+                        <div style={{marginTop:'420px'}}></div>
+                        <button className='redirect-button' onClick={handleGoToProfile}>GO TO PROFILE</button>
+                        <button className='exit-button' onClick={handleClose}>KEEP SWIPING</button>
+                    </div>
                 </BS.Modal.Body>
             </BS.Modal>
     )
