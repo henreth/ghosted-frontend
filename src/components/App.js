@@ -55,7 +55,7 @@ function App () {
   const [lastPerson, setLastPerson] = useState({})
 
   let [showMatchModal, setShowMatchModal] = useState(false);
-  let [showInfoModal, setShowInfoModal] = useState(true);
+  let [showInfoModal, setShowInfoModal] = useState(false);
 
 
   useEffect(()=>{

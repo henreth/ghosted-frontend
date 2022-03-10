@@ -36,10 +36,30 @@
     /* padding-right: 1rem; */
     background-color: transparent;
     align-items: center;
+    margin-left: 860px;
+    margin-top: 10px;
+    /* filter: invert(94%); */
+    z-index: 10;
+}
+
+.header-title{
+    font-family: 'Nosifer', cursive;
+    position: absolute;
+    /* height: 100px; */
+    font-size: 300%;
+    /* padding-right: 1rem; */
+    background-color: transparent;
+    align-items: center;
     margin-left: 600px;
     margin-top: 10px;
-    filter: invert(94%);
     z-index: 10;
+    color: white;
+    opacity: .55;
+    transition: 1s;
+}
+
+.header-title:hover{
+    opacity: 1;
 }
 
 .nav-home {

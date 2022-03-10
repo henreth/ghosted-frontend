@@ -35,9 +35,9 @@
     border-radius: 10px;
   }
   
-  .mini-card:hover{
+  /* .mini-card:hover{
     box-shadow: 0px 0px 10px 0px rgba(60, 236, 183, 0.295);
-  }
+  } */
 
   .cancel-button{
     position: absolute;

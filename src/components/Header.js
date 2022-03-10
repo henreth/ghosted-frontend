@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { NavLink,useHistory } from "react-router-dom";
-import logo from '../img/ghosted-logo.png' 
+import logo from '../img/heart-ghost.png' 
 import '../style/header.css';
 import Sidebar from './Sidebar';
 import reset from '../img/reset-icon2.png';
@@ -56,7 +56,7 @@ function Header({matches,setMatches, user,showInfoModal, setShowInfoModal}) {
               className="header-logo"
               />
         {/* </NavLink> */}
-
+        <div className="header-title">Ghostd</div>
         {/* <img 
           src={userPhoto}
           className='profile-photo'
