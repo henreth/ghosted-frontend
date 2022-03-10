@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import { Route, Switch } from "react-router-dom";
-
 import axios from 'axios';
 import '../style/app.css';
 import NavBar from './Header';

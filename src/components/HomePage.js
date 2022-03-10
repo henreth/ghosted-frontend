@@ -8,6 +8,7 @@ import location from '../img/location_icon.png';
 import Card from './Card';
 import image from '../img/abe.jpeg';
 import info from '../img/info-icon.png';
+import FakeModal from './MatchModal';
 
 // posts 
 // upon swiping either direction, creates a 'like' model for the user and targeted profile
@@ -119,6 +120,7 @@ let undoUrl = 'http://localhost:4000/undo'
             href='https://fonts.googleapis.com/css?family=Alatsi&display=swap'
             rel='stylesheet'
           />
+          {showMatchModal? <FakeModal user={userx} profile={db[currentIndex+1]} setShowMatchModal={setShowMatchModal}/> : null}
           <div className='cardContainer'>
             {db.map((character, index) => (
               <Card
