@@ -6,6 +6,7 @@ import Sidebar from './Sidebar'
 import reset from '../img/reset-icon2.png'
 import axios from "axios";
 import FakeModal from './FakeModal';
+import userPhoto from '../img/melting-ghost.png'
 
 
 let undoUrl = 'http://localhost:4000/reset'
@@ -38,6 +39,11 @@ function Header({matches,setMatches,showMatchModal, setShowMatchModal}) {
               className="header-logo"
               />
         {/* </NavLink> */}
+
+        <img 
+          src={userPhoto}
+          className='profile-photo'
+          />
 
         <img 
           src={reset}
