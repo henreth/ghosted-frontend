@@ -19,7 +19,7 @@ let dislikeUrl = 'http://localhost:4000/dislike'
 let undoUrl = 'http://localhost:4000/undo'
 
   
-  function HomePage ({db,setDB,likes,setLikes,currentIndex,setCurrentIndex,lastPerson,setLastPerson,peopleUrl,user,matches,setMatches}) {
+  function HomePage ({db,setDB,likes,setLikes,currentIndex,setCurrentIndex,lastPerson,setLastPerson,peopleUrl,user,matches,setMatches,showMatchModal, setShowMatchModal}) {
     document.title='Ghostd - Home'
     let [userx,setUserx] = useState('')
     useEffect(()=>{
@@ -44,7 +44,6 @@ let undoUrl = 'http://localhost:4000/undo'
     const canGoBack = currentIndex < db.length - 1
   
     const canSwipe = currentIndex >= 0
-
   
     // set last direction and decrease current index
     function swiped (direction, character, index,id){
@@ -63,7 +62,8 @@ let undoUrl = 'http://localhost:4000/undo'
               console.log('No Match')
               break;
             case true:
-              alert('You\'ve matched with '+ db[index].name+'!')
+              // alert('You\'ve matched with '+ db[index].name+'!')
+              setShowMatchModal(true);
               setMatches([...matches,db[index]])
               break;
           }

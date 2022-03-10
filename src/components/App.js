@@ -55,6 +55,9 @@ function App () {
   const [currentIndex, setCurrentIndex] = useState(db.length - 1)
   const [lastPerson, setLastPerson] = useState({})
 
+  let [showMatchModal, setShowMatchModal] = useState(false);
+
+
 
 
   useEffect(()=>{
@@ -89,6 +92,8 @@ function App () {
       <NavBar
         matches = {matches}
         setMatches = {setMatches}
+        showMatchModal={showMatchModal}
+        setShowMatchModal={setShowMatchModal}
         />
       <div className='main-page'>
       <Switch>
@@ -107,6 +112,8 @@ function App () {
               matches={matches}
               setMatches={setMatches}
               user={user}
+              showMatchModal={showMatchModal}
+              setShowMatchModal={setShowMatchModal}
               />
           </Route>
           <Route path ="/matches">
