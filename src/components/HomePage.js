@@ -107,6 +107,9 @@ let undoUrl = 'http://localhost:4000/undo'
       axios.patch(undoUrl,{
         user_id: id,
         profile_id: db[newIndex].id})
+      setMatches(matches.filter(match=>{
+        return match.id !== db[newIndex].id
+      }))
     }
   
     return (

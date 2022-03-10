@@ -2,7 +2,8 @@ import React from 'react'
 import '../style/largecard.css';
 
 
-function LargeCard ({profile}) {
+function LargeCard ({profile,nameLength,locationLength}) {
+
     return (
         <div className='large-cardContainer'>
                 <div

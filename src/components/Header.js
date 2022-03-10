@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink,useHistory } from "react-router-dom";
 import logo from '../img/ghosted-logo.png' 
 import '../style/header.css';
 import Sidebar from './Sidebar'
 import reset from '../img/reset-icon2.png'
 import axios from "axios";
-import FakeModal from './MatchModal';
 import userPhoto from '../img/userPhoto.jpeg'
+import homeIcon from '../img/home-icon.png'
 
 
 let undoUrl = 'http://localhost:4000/reset'
@@ -14,9 +14,13 @@ let undoUrl = 'http://localhost:4000/reset'
 
 function Header({matches,setMatches, user}) {
 
+  let history = useHistory();
+
   function handleResetClick(){
     axios.patch(undoUrl)
-    .then(window.location.reload())
+    .then(r=>{
+      history.push('/')
+      window.location.reload()})
   }
   
   return (
@@ -45,6 +49,12 @@ function Header({matches,setMatches, user}) {
           src={userPhoto}
           className='profile-photo'
           /> */}
+
+      <img 
+          src={homeIcon}
+          className='home-icon'
+          />
+
 
         <img 
           src={reset}
