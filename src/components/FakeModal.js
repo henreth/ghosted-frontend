@@ -5,7 +5,7 @@ import confetti from "canvas-confetti";
 import '../style/fakemodal.css'
 
 
-function WinnerModal({ setShowMatchModal}) {
+function MatchModal({ setShowMatchModal}) {
     const [openMatchModal, setOpenMatchModal] = useState(true)
     const history = useHistory()
 
@@ -72,10 +72,11 @@ function WinnerModal({ setShowMatchModal}) {
                     <p>He's been compared to Elvis Costello, but I think Huey has a far more bitter, cynical sense of humor.</p>
                     <hr></hr>
                     {/* <button>test</button> */}
+                    <BS.Button variant='secondary' onClick={handleGoToProfile}>Go to Profile</BS.Button>
                     <BS.Button variant='secondary' onClick={handleClose}>EXIT</BS.Button>
                 </BS.Modal.Body>
             </BS.Modal>
     )
 }
 
-export default WinnerModal
+export default MatchModal
