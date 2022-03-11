@@ -270,7 +270,6 @@ function Matches({matches,user,setMatches}){
 
             <div className='matches-container'>
                 <h1 className='matches-title'>Matches</h1>
-                <img className="mini-heart" src={heart} />
                 {/* <div className='matches-carousel'> 
                     {matchesToDisplay}
                 </div> */}

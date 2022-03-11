@@ -12,7 +12,7 @@ function MatchModal({ setShowMatchModal, user, profile}) {
     const history = useHistory()
 
     function handleClose() {
-        setOpenMatchModal(openMatchModal => !openMatchModal)
+        setOpenMatchModal(!openMatchModal)
         setShowMatchModal(false)
         confetti.reset()
     }

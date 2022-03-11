@@ -48,20 +48,17 @@ function Header({matches,setMatches, user,showInfoModal, setShowInfoModal}) {
     <div className="header">
       <div className='header-container'>
 
+        <img 
+          src={logo}
+          alt="Logo"
+          className="header-logo"
+          hidden={showInfoModal?'true':null}
+        />
 
-        {/* <NavLink to="/"> */}
-            <img 
-              src={logo}
-              alt="Logo"
-              className="header-logo"
-              />
-        {/* </NavLink> */}
-        <div className="header-title">Ghostd</div>
-        {/* <img 
-          src={userPhoto}
-          className='profile-photo'
-          /> */}
-          
+        <div 
+          className="header-title" hidden={showInfoModal?'true':null}
+          >Ghostd</div>
+
       <img 
           src={helpIcon}
           className='help-icon'
