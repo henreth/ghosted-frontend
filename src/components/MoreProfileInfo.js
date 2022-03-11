@@ -8,6 +8,7 @@ let unmatchUrl = 'http://localhost:4000/unmatch';
 let userUrl = 'http://localhost:4000/user';
 
 function MoreProfileInfo ({showMoreProfileInfo, setShowMoreProfileInfo, profile,nameLength,locationLength}) {
+    console.log(profile)
 
     function handleCloseProfile(){
         setShowMoreProfileInfo(!showMoreProfileInfo)
@@ -15,8 +16,8 @@ function MoreProfileInfo ({showMoreProfileInfo, setShowMoreProfileInfo, profile,
 
     return (
         <div className='moreProfileInfo-cardContainer'>
-            <div className='moreprofile-info-card'>
-            {profile.name==='Jonathan'?<img className='moreuser-info-img' src={userPhoto}/>:<img className='moreprofile-info--img' src={profile.image}/>}
+            <div className={profile.name==='Jonathan'?'moreuser-info-card':'moreprofile-info-card'}>
+            {profile.name==='Jonathan'?<img className='moreuser-info-img' src={userPhoto}/>:<img className='moreprofile-info-img' src={profile.image}/>}
                 <div className='info-box'>
                     <h1 className={nameLength > 10?'card-title-long':'card-title'}>{profile.name}</h1>
                     <h3 className={locationLength > 15? 'card-location-long':'card-location'}><img className ='location-icon-here' src={location}/>{profile.location}</h3>

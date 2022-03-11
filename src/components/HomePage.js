@@ -9,6 +9,8 @@ import Card from './Card';
 import image from '../img/abe.jpeg';
 import info from '../img/info-icon.png';
 import FakeModal from './MatchModal';
+import MoreProfileInfo from './MoreProfileInfo';
+
 
 // posts 
 // upon swiping either direction, creates a 'like' model for the user and targeted profile
@@ -111,6 +113,12 @@ let undoUrl = 'http://localhost:4000/undo'
         return match.id !== db[newIndex].id
       }))
     }
+
+    let [showMoreProfileInfo, setShowMoreProfileInfo] = useState(false);
+    function handleClickInfoButton(){
+      setShowMoreProfileInfo(true)
+  }
+
   
     return (
       <React.Fragment>
@@ -124,6 +132,7 @@ let undoUrl = 'http://localhost:4000/undo'
             rel='stylesheet'
           />
           {showMatchModal? <FakeModal user={userx} profile={db[currentIndex+1]} setShowMatchModal={setShowMatchModal}/> : null}
+          {showMoreProfileInfo?<React.Fragment><div className='moreProfileInfo-curtain'>-</div> <MoreProfileInfo showMoreProfileInfo={showMoreProfileInfo} setShowMoreProfileInfo={setShowMoreProfileInfo} profile={lastPerson}/></React.Fragment>:null}
           <div className='cardContainer'>
             {db.map((character, index) => (
               <Card
@@ -144,7 +153,7 @@ let undoUrl = 'http://localhost:4000/undo'
                   {/* <div className='location-text'>{character.location}</div> */}
                   <div className='description-text'>{character.description.split('').length >50 ? character.description.slice(0,50)+'...':character.description}</div>
                   {/* <h4 className='age'>{character.age}</h4> */}
-                  <img className='info-icon' src={info} />
+                  <img className='info-icon' onClick={handleClickInfoButton} src={info} />
 
                 </div>
               </Card>

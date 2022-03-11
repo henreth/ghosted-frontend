@@ -11,7 +11,7 @@ function Sidebar({matches,setMatches,user}) {
     let [showMoreUserInfo, setShowMoreUserInfo] = useState(false);
 
     function handleClickUser(){
-        setShowMoreUserInfo(true)
+        setShowMoreUserInfo(!showMoreUserInfo)
     }
 
     let matchesFirstColumn = matches.filter((match,index)=>index%2===0)
