@@ -78,3 +78,16 @@
     background-color: rgb(37, 37, 37);
     color: salmon
   }
+
+.matchmodal-curtain{
+    position: absolute;
+    z-index:999;
+    background-color: black;
+    opacity: .65;
+    padding-top: 1000px;
+    padding-left: 10000px;
+}
+
+.hidden{
+    display:hidden;
+}

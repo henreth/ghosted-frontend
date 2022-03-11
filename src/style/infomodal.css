@@ -11,6 +11,10 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+.title-logo{
+    font-family: 'Nosifer', cursive;
+}
+
 
 .exit-button{
     /* display: inline-block; */
@@ -109,4 +113,15 @@
     transform: rotate(360deg);
   }
   
+.infomodal-curtain{
+    position: absolute;
+    z-index:999;
+    background-color: black;
+    opacity: .55;
+    padding-top: 1000px;
+    padding-left: 10000px;
+}
   
+.hidden{
+    display:hidden;
+}

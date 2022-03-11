@@ -58,6 +58,8 @@ function MatchModal({ setShowMatchModal, user, profile}) {
     });
 
     return (
+        <React.Fragment>
+            <div className={openMatchModal?'matchmodal-curtain':'hidden'}>-</div>
             <BS.Modal
                 size="lg"
                 aria-labelledby="contained-modal-title-vcenter"
@@ -82,6 +84,7 @@ function MatchModal({ setShowMatchModal, user, profile}) {
                     </div>
                 </BS.Modal.Body>
             </BS.Modal>
+        </React.Fragment>
     )
 }
 
