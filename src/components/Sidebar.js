@@ -20,7 +20,6 @@ function Sidebar({matches,setMatches,user}) {
     }
 
 
-
     let matchesFirstColumn = matches.filter((match,index)=>index%2===0)
     let matchesSecondColumn = matches.filter((match,index)=>index%2!==0)
 

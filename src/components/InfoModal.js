@@ -30,7 +30,11 @@ function InfoModal({ setShowInfoModal,user }) {
                 show={openInfoModal}
                 onHide={handleClose}
                 // backdrop='static'
-                style={{ zIndex:'1000', borderRadius: '30px', backgroundColor: 'rgba(0, 0, 0, 0.75)', width:'50%', position:'absolute',marginLeft:'360px', marginTop:'-800px'}}
+                style={{ 
+                    animation: 'fadeInAnimation ease .4s',
+                    animationIterationCount: '1',
+                    animationFillMode: 'forwards',
+                    zIndex:'1000', borderRadius: '30px', backgroundColor: 'rgba(0, 0, 0, 0.75)', width:'50%', position:'absolute',marginLeft:'360px', marginTop:'-800px'}}
             >
                 <BS.Modal.Body style={{ padding: '80px',paddingLeft:'70px',textAlign: "center", opacity: '1', color: '#fff', background: ''}}>
                     <div className='text-holder'>

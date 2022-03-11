@@ -34,6 +34,10 @@ function MatchModal({ setShowMatchModal, user, profile}) {
         }));
     }
 
+    fire(0.35, {
+        spread: 36,
+        startVelocity: 65,
+    });
     fire(0.25, {
         spread: 26,
         startVelocity: 55,
@@ -56,10 +60,14 @@ function MatchModal({ setShowMatchModal, user, profile}) {
         spread: 120,
         startVelocity: 45,
     });
+    fire(0.05, {
+        spread: 130,
+        startVelocity: 55,
+    });
 
     return (
         <React.Fragment>
-            <div className={openMatchModal?'matchmodal-curtain':'hidden'}>-</div>
+            <div className={openMatchModal?'matchmodal-curtain':'hidden'} style={{transition: '1s ease-in-out'}}>-</div>
             <BS.Modal
                 size="lg"
                 aria-labelledby="contained-modal-title-vcenter"
@@ -67,7 +75,11 @@ function MatchModal({ setShowMatchModal, user, profile}) {
                 show={openMatchModal}
                 onHide={handleClose}
                 // backdrop='static'
-                style={{ borderRadius: '30px', zIndex:1000, backgroundColor: 'rgba(0, 0, 0, 0.75)', width:'50%', position:'absolute',marginLeft:'370px', marginTop:'-790px'}}
+                style={{
+                    animation: 'fadeInAnimation ease .5s',
+                    animationIterationCount: '1',
+                    animationFillMode: 'forwards',
+                    borderRadius: '30px', zIndex:1000, backgroundColor: 'rgba(0, 0, 0, 0.75)', width:'50%', position:'absolute',marginLeft:'370px', marginTop:'-790px'}}
             >
                                     {/* <div style={{marginTop:'100px'}}></div> */}
 

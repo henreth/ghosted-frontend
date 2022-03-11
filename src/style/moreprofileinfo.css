@@ -29,6 +29,9 @@
     transition: all .15s;
     margin-left: 325px;
     margin-top: 95px;
+    animation: fadeInAnimation ease .3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
   }
 
   .moreprofile-info-card {
@@ -49,6 +52,10 @@
     margin-left: -390px;
     margin-top: 150px;
     z-index: 1000;
+    animation: fadeInAnimation ease-in-out .3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+
   }
 
 
@@ -141,7 +148,7 @@ font-family: 'Montserrat', sans-serif;
   color: white;
 display: flex;
 justify-content: left;
-margin-top: 10%;
+margin-top: -0% !important;
 font-size: 120%;
 font-family: 'Montserrat', sans-serif;
 }
@@ -171,5 +178,11 @@ font-family: 'Montserrat', sans-serif;
 }
 
 
-
-
+@keyframes fadeInAnimation {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+   }
+}

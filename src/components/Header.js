@@ -43,7 +43,7 @@ function Header({matches,setMatches, user,showInfoModal, setShowInfoModal}) {
         setMatches = {setMatches}
         user={user}
     />
-  {showInfoModal? <InfoModal user={user} setInfoModal={setShowInfoModal}/> : null}
+  {showInfoModal? <InfoModal user={user} setShowInfoModal={setShowInfoModal}/> : null}
 
     <div className="header">
       <div className='header-container'>

@@ -259,10 +259,27 @@ h2 {
 }
 
 .moreProfileInfo-curtain{
+  animation: fadeInAnimation ease .25s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
   position: absolute;
   z-index:999;
   background-color: black;
   opacity: .65;
   padding-top: 1000px;
   padding-left: 10000px;
+}
+
+
+
+/* animation: fadeInAnimation ease 3s;
+animation-iteration-count: 1;
+animation-fill-mode: forwards; */
+@keyframes fadeInAnimation {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+   }
 }
