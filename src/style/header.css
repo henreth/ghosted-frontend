@@ -29,17 +29,22 @@
     align-items: center;
 }
 
-
 .header-logo {
     position: absolute;
     height: 50px;
     /* padding-right: 1rem; */
     background-color: transparent;
     align-items: center;
-    margin-left: 860px;
+    margin-left: 820px;
     margin-top: 10px;
     /* filter: invert(94%); */
     z-index: 10;
+    opacity: .55;
+    transition: 1s;
+}
+
+.header-logo:hover{
+    opacity: 1;
 }
 
 .header-title{
@@ -50,7 +55,7 @@
     /* padding-right: 1rem; */
     background-color: transparent;
     align-items: center;
-    margin-left: 600px;
+    margin-left: 570px;
     margin-top: 10px;
     z-index: 10;
     color: white;

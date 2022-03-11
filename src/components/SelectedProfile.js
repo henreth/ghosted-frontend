@@ -6,7 +6,7 @@ import LargeCard from "./LargeCard";
 
 let profileUrl = 'http://localhost:4000/profile/'
 
-function SelectedProfile({}) {
+function SelectedProfile({matches,setMatches}) {
     const params = useParams();
     let [data,setData]=useState([]);
     let [nameLength, setNameLength] = useState(0)
@@ -31,6 +31,8 @@ function SelectedProfile({}) {
                 <LargeCard profile={data}
                     nameLength={nameLength}
                     locationLength={locationLength}
+                    matches={matches}
+                    setMatches={setMatches}
                 />
             </div>
         </React.Fragment>

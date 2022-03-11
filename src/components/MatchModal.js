@@ -65,7 +65,7 @@ function MatchModal({ setShowMatchModal, user, profile}) {
                 show={openMatchModal}
                 onHide={handleClose}
                 // backdrop='static'
-                style={{ borderRadius: '30px', backgroundColor: 'rgba(0, 0, 0, 0.75)', width:'50%', position:'absolute',marginLeft:'350px', marginTop:'-790px'}}
+                style={{ borderRadius: '30px', zIndex:1000, backgroundColor: 'rgba(0, 0, 0, 0.75)', width:'50%', position:'absolute',marginLeft:'370px', marginTop:'-790px'}}
             >
                                     {/* <div style={{marginTop:'100px'}}></div> */}
 

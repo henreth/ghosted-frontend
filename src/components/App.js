@@ -30,7 +30,6 @@ let userUrl = 'http://localhost:4000/user'
 //gets a specific profile
 let profileUrl = 'http://localhost:4000//profile/:id'
 
-
 // posts 
 // upon swiping either direction, creates a 'like' model for the user and targeted profile
 let likeUrl = 'http://localhost:4000/like'
@@ -42,6 +41,7 @@ let undoUrl = 'http://localhost:4000/undo'
 
 // patching to this will reset all information
 let resetUrl = 'http://localhost:4000/reset'
+let unmatchUrl = 'http://localhost:4000/unmatch'
 
 
 function App () {
@@ -125,6 +125,8 @@ function App () {
           </Route>
           <Route exact path ='/match/:profileId'>
               <SelectedProfile
+                              matches={matches}
+                              setMatches={setMatches}                
               />
           </Route>
 
