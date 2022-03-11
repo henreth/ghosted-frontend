@@ -8,10 +8,10 @@ import location from '../img/location_icon.png';
 
 
 function Sidebar({matches,setMatches,user}) {
-    let [showMoreProfileInfo, setShowMoreProfileInfo] = useState(false);
+    let [showMoreUserInfo, setShowMoreUserInfo] = useState(false);
 
-    function handleClickProfile(){
-        setShowMoreProfileInfo(!showMoreProfileInfo)
+    function handleClickUser(){
+        setShowMoreUserInfo(true)
     }
 
     let matchesFirstColumn = matches.filter((match,index)=>index%2===0)
@@ -48,8 +48,8 @@ function Sidebar({matches,setMatches,user}) {
   return (
       <div className='menu-holder'>
         <Menu>
-            {showMoreProfileInfo? <MoreProfileInfo showMoreProfileInfo={showMoreProfileInfo} setShowMoreProfileInfo={setShowMoreProfileInfo} profile={user} /> : null}
-            <img src={userPhoto} onClick={handleClickProfile} className='profile-photo-sidebar'/>
+            {showMoreUserInfo? <MoreProfileInfo showMoreProfileInfo={showMoreUserInfo} setShowMoreProfileInfo={setShowMoreUserInfo} profile={user} /> : null}
+            <img src={userPhoto} onClick={handleClickUser} className='profile-photo-sidebar'/>
             <a className="spacing-menu-item">'</a>
             <div className='profile-name-sidebar'>{user.name}</div>
             <img className = 'profile-location-icon-sidebar' src={location}/>
