@@ -137,7 +137,7 @@ let undoUrl = 'http://localhost:4000/undo'
                   style={{ backgroundImage: 'url(' + character.url + ')' }}
                   className='card'
                 >
-                  <h3>{character.name} {character.age}</h3>
+                  <h3 className='name-age'>{character.name} {character.age}</h3>
                   <img className='img' src={character.image}/>
                   {/* <h4>{character.pronouns}</h4> */}
                   {/* <img className = 'location-icon' src={location}/> */}

@@ -11,11 +11,13 @@
   .bm-burger-bars {
     /* background: #373a47; */
     background: #5e5f63;
+    transition: .5s;
+
   }
   
   /* Color/shape of burger icon bars on hover*/
   .bm-burger-bars-hover {
-    background: #00a984;
+    background: #88dfcc;
   }
   
   /* Position and sizing of clickable cross button */

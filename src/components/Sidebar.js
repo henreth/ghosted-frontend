@@ -1,12 +1,18 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { elastic as Menu } from 'react-burger-menu';
 import '../style/sidebar.css';
 import MiniCard from './MiniCard';
-import userPhoto from '../img/melting-ghost.png'
+import MoreProfileInfo from './MoreProfileInfo';
+import userPhoto from '../img/userPhoto.jpeg';
 import location from '../img/location_icon.png';
 
 
 function Sidebar({matches,setMatches,user}) {
+    let [showMoreProfileInfo, setShowMoreProfileInfo] = useState(false);
+
+    function handleClickProfile(){
+        setShowMoreProfileInfo(!showMoreProfileInfo)
+    }
 
     let matchesFirstColumn = matches.filter((match,index)=>index%2===0)
     let matchesSecondColumn = matches.filter((match,index)=>index%2!==0)
@@ -42,8 +48,8 @@ function Sidebar({matches,setMatches,user}) {
   return (
       <div className='menu-holder'>
         <Menu>
-
-            <img src={userPhoto} className='profile-photo-sidebar'/>
+            {showMoreProfileInfo? <MoreProfileInfo showMoreProfileInfo={showMoreProfileInfo} setShowMoreProfileInfo={setShowMoreProfileInfo} profile={user} /> : null}
+            <img src={userPhoto} onClick={handleClickProfile} className='profile-photo-sidebar'/>
             <a className="spacing-menu-item">'</a>
             <div className='profile-name-sidebar'>{user.name}</div>
             <img className = 'profile-location-icon-sidebar' src={location}/>

@@ -24,7 +24,7 @@ function MiniCard ({character}) {
                 >
                     <div className='mini-name'>{character.name}</div>
                     <img className='mini-img' src={character.image} onClick={handleInfoClick}/>
-                    <img className='cancel-button' src={cancel} onClick={handleInfoClick}/>
+                    {/* <img className='cancel-button' src={cancel} onClick={handleInfoClick}/> */}
                 </div>
       </div>
     )
