@@ -193,8 +193,8 @@ font-family: 'Montserrat', sans-serif;
 
 @keyframes pump {
   0% {transform: scale(0.95);}
-  5% {transform: scale(1.05);}
-  39% {transform: scale(0.90);}
+  5% {transform: scale(.90);}
+  39% {transform: scale(1.05);}
   45% {transform: scale(1);}
   60% {transform: scale(0.95);}
   100% {transform: scale(0.925);}

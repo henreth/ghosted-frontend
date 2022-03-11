@@ -56,7 +56,7 @@
     color: #00a984;
 }
 
-.exit-button{
+.swipe-button{
     /* display: inline-block; */
     cursor: pointer;
     font-size: 1.1rem;
@@ -74,7 +74,7 @@
     transition: .25s;
 }
 
-.exit-button:hover {
+.swipe-button:hover {
     background-color: rgb(37, 37, 37);
     color: salmon
   }

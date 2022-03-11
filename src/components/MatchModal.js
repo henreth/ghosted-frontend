@@ -80,7 +80,7 @@ function MatchModal({ setShowMatchModal, user, profile}) {
                         <hr></hr>
                         <div style={{marginTop:'420px'}}></div>
                         <button className='redirect-button' onClick={handleGoToProfile}>GO TO PROFILE</button>
-                        <button className='exit-button' onClick={handleClose}>KEEP SWIPING</button>
+                        <button className='swipe-button' onClick={handleClose}>KEEP SWIPING</button>
                     </div>
                 </BS.Modal.Body>
             </BS.Modal>
