@@ -66,7 +66,7 @@ function Sidebar({matches,setMatches,user}) {
       <div className='menu-holder'>
         <Menu>
             {showMoreUserInfo? <MoreProfileInfo showMoreProfileInfo={showMoreUserInfo} setShowMoreProfileInfo={setShowMoreUserInfo} profile={user} /> : null}
-            {showMoreProfileInfo?<MoreMatchInfo size={'s'} matches={matches} setMatches={setMatches} showMoreProfileInfo={showMoreProfileInfo} setShowMoreProfileInfo={setShowMoreProfileInfo} profile={selectedMatch} nameLength={selectedMatch.name.length} locationLength={selectedMatch.name.length}/>:null}
+            {showMoreProfileInfo?<MoreMatchInfo size={'s'} matches={matches} setMatches={setMatches} showMoreProfileInfo={showMoreProfileInfo} setShowMoreProfileInfo={setShowMoreProfileInfo} profile={selectedMatch} nameLength={selectedMatch.name.length} locationLength={selectedMatch.name.length} descriptionLength={selectedMatch.description.length}/>:null}
             <img src={userPhoto} onClick={handleClickUser} className='profile-photo-sidebar'/>
             <a className="spacing-menu-item">'</a>
             <div className='profile-name-sidebar'>{user.name}</div>

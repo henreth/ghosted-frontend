@@ -93,10 +93,11 @@
 
 .matchinfo-img {
     /* display: flex; */
-    flex-direction: row;
-    justify-content: left;
+    /* flex-direction: row; */
+    /* justify-content: left; */
     height: 500px;
     width: 460px;
+    max-width: 410px;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
   }
@@ -160,15 +161,33 @@ font-size: 150%;
 
 .matchinfo-card-subtitle {
 color: white;
-display: flex;
+display: flex !important;
 justify-content: center;
 font-family: 'Montserrat', sans-serif;
 }
 
 .matchinfo-card-text {
   color: white;
-display: flex;
-justify-content: left;
+  display: absolute !important;
+  justify-content: left !important;
+  margin-top: 0%;
+  font-size: 120%;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.matchinfo-card-text-long {
+  color: white;
+  display: absolute !important;
+  justify-content: left !important;
+  margin-top: 0%;
+  font-size: 66%;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.matches-matchinfo-card-text {
+  color: white;
+display: flex !important;
+justify-content: left !important;
 margin-top: 0%;
 font-size: 120%;
 font-family: 'Montserrat', sans-serif;
