@@ -132,7 +132,7 @@ let undoUrl = 'http://localhost:4000/undo'
             rel='stylesheet'
           />
           {showMatchModal? <FakeModal user={userx} profile={db[currentIndex+1]} setShowMatchModal={setShowMatchModal}/> : null}
-          {showMoreProfileInfo?<React.Fragment><div className='moreProfileInfo-curtain'>-</div> <MoreProfileInfo showMoreProfileInfo={showMoreProfileInfo} setShowMoreProfileInfo={setShowMoreProfileInfo} profile={lastPerson}/></React.Fragment>:null}
+          {showMoreProfileInfo?<React.Fragment><div className='moreProfileInfo-curtain'>-</div> <MoreProfileInfo showMoreProfileInfo={showMoreProfileInfo} setShowMoreProfileInfo={setShowMoreProfileInfo} profile={lastPerson} nameLength={lastPerson.name.length} locationLength={lastPerson.location.length}/></React.Fragment>:null}
           <div className='cardContainer'>
             {db.map((character, index) => (
               <Card

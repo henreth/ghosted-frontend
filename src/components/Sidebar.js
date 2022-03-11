@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import { elastic as Menu } from 'react-burger-menu';
 import '../style/sidebar.css';
 import MiniCard from './MiniCard';
+import MoreMatchInfo from './MoreMatchInfo';
 import MoreProfileInfo from './MoreProfileInfo';
 import userPhoto from '../img/userPhoto.jpeg';
 import location from '../img/location_icon.png';
@@ -9,10 +10,17 @@ import location from '../img/location_icon.png';
 
 function Sidebar({matches,setMatches,user}) {
     let [showMoreUserInfo, setShowMoreUserInfo] = useState(false);
+    let [selectedMatch,setSelectedMatch] = useState(user)
 
     function handleClickUser(){
         setShowMoreUserInfo(!showMoreUserInfo)
+        setShowMoreProfileInfo(false)
     }
+
+    let [showMoreProfileInfo, setShowMoreProfileInfo] = useState(false);
+    function handleClickMiniCard(event){
+        setShowMoreProfileInfo(true)
+  }
 
     let matchesFirstColumn = matches.filter((match,index)=>index%2===0)
     let matchesSecondColumn = matches.filter((match,index)=>index%2!==0)
@@ -31,7 +39,12 @@ function Sidebar({matches,setMatches,user}) {
             //update to fetch individual profiles
             <MiniCard 
                 key={match.name}
-                character={match} />
+                profile={match}
+                showMoreProfileInfo={showMoreProfileInfo}
+                setShowMoreProfileInfo={setShowMoreProfileInfo}
+                setSelectedMatch={setSelectedMatch}
+                setShowMoreUserInfo={setShowMoreUserInfo}
+                 />
         )
     })
 
@@ -40,15 +53,22 @@ function Sidebar({matches,setMatches,user}) {
             //update to fetch individual profiles
             <MiniCard 
                 key={match.name}
-                character={match} />
+                profile={match}
+                showMoreProfileInfo={showMoreProfileInfo}
+                setShowMoreProfileInfo={setShowMoreProfileInfo}
+                setSelectedMatch={setSelectedMatch}
+                setShowMoreUserInfo={setShowMoreUserInfo}
+                />
         )
     })
-    
 
+    
+ 
   return (
       <div className='menu-holder'>
         <Menu>
             {showMoreUserInfo? <MoreProfileInfo showMoreProfileInfo={showMoreUserInfo} setShowMoreProfileInfo={setShowMoreUserInfo} profile={user} /> : null}
+            {showMoreProfileInfo?<MoreMatchInfo showMoreProfileInfo={showMoreProfileInfo} setShowMoreProfileInfo={setShowMoreProfileInfo} profile={selectedMatch}/>:null}
             <img src={userPhoto} onClick={handleClickUser} className='profile-photo-sidebar'/>
             <a className="spacing-menu-item">'</a>
             <div className='profile-name-sidebar'>{user.name}</div>

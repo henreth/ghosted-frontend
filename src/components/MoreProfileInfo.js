@@ -8,7 +8,8 @@ let unmatchUrl = 'http://localhost:4000/unmatch';
 let userUrl = 'http://localhost:4000/user';
 
 function MoreProfileInfo ({showMoreProfileInfo, setShowMoreProfileInfo, profile,nameLength,locationLength}) {
-    console.log(profile)
+    console.log(nameLength)
+
 
     function handleCloseProfile(){
         setShowMoreProfileInfo(!showMoreProfileInfo)

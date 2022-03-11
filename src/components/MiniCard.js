@@ -4,17 +4,23 @@ import { Route, Link, useHistory } from "react-router-dom";
 import cancel from '../img/cancel-icon.png';
 
 
-function MiniCard ({character}) {
+function MiniCard ({profile,showMoreProfileInfo,setShowMoreProfileInfo,setSelectedMatch,setShowMoreUserInfo}) {
 
     let history = useHistory();
 
-    function handleInfoClick(){
-        history.push(`/match/${character.id}`)
-        window.location.reload()
-    }
+    // function handleInfoClick(){
+    //     history.push(`/match/${profile.id}`)
+    //     window.location.reload()
+    // }
 
-    function handleDeleteClick(){
-        console.log('deleted')
+    // function handleDeleteClick(){
+    //     console.log('deleted')
+    // }
+
+    function handleOpenInfo(){
+        setShowMoreProfileInfo(true)
+        setSelectedMatch(profile)
+        setShowMoreUserInfo(false)
     }
 
     return (
@@ -22,8 +28,8 @@ function MiniCard ({character}) {
                 <div
                     className='mini-card'
                 >
-                    <div className='mini-name'>{character.name}</div>
-                    <img className='mini-img' src={character.image} onClick={handleInfoClick}/>
+                    <div className='mini-name'>{profile.name}</div>
+                    <img className='mini-img' src={profile.image} onClick={handleOpenInfo}/>
                     {/* <img className='cancel-button' src={cancel} onClick={handleInfoClick}/> */}
                 </div>
       </div>
