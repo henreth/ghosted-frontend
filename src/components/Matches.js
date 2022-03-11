@@ -2,12 +2,17 @@ import React, {useState } from 'react'
 import '../style/matches.css';
 import MediumCard from './MediumCard';
 import LargeCard from './LargeCard';
+import MoreMatchInfo from './MoreMatchInfo';
 import heart from '../img/real_heart.png';
 
 
 
-function Matches({matches,setMatches}){
+function Matches({matches,user,setMatches}){
     document.title='Ghostd - Matches'
+
+    let [showMoreProfileInfo, setShowMoreProfileInfo] = useState(false);
+    let [selectedMatch,setSelectedMatch] = useState(user);
+
 
     function displayMatches(data){
         if(data.length>=20){
@@ -17,7 +22,15 @@ function Matches({matches,setMatches}){
                         {data.slice(0,5).map(match=>{
                             return (
                                 //update to fetch individual profiles
-                                <MediumCard key={match.name} character={match} />
+                                <MediumCard 
+                                    key={match.name} 
+                                    profile={match}
+                                    matches={setMatches}
+                                    setMatches={setMatches}                
+                                    showMoreProfileInfo={showMoreProfileInfo}
+                                    setShowMoreProfileInfo={setShowMoreProfileInfo}
+                                    setSelectedMatch={setSelectedMatch}
+                                />
                             )
                         })}
                     </div>
@@ -25,32 +38,60 @@ function Matches({matches,setMatches}){
                         {data.slice(5,10).map(match=>{
                             return (
                                 //update to fetch individual profiles
-                                <MediumCard key={match.name} character={match} />
-                            )
+                                <MediumCard 
+                                    key={match.name} 
+                                    profile={match}
+                                    matches={setMatches}
+                                    setMatches={setMatches}                
+                                    showMoreProfileInfo={showMoreProfileInfo}
+                                    setShowMoreProfileInfo={setShowMoreProfileInfo}
+                                    setSelectedMatch={setSelectedMatch}
+                                />                            )
                         })}
                     </div>
                     <div className='matches-carousel'> 
                         {data.slice(10,15).map(match=>{
                             return (
                                 //update to fetch individual profiles
-                                <MediumCard key={match.name} character={match} />
-                            )
+                                <MediumCard 
+                                    key={match.name} 
+                                    profile={match}
+                                    matches={setMatches}
+                                    setMatches={setMatches}                
+                                    showMoreProfileInfo={showMoreProfileInfo}
+                                    setShowMoreProfileInfo={setShowMoreProfileInfo}
+                                    setSelectedMatch={setSelectedMatch}
+                                />                            )
                         })}
                     </div>
                     <div className='matches-carousel'> 
                         {data.slice(15,20).map(match=>{
                             return (
                                 //update to fetch individual profiles
-                                <MediumCard key={match.name} character={match} />
-                            )
+                                <MediumCard 
+                                    key={match.name} 
+                                    profile={match}
+                                    matches={setMatches}
+                                    setMatches={setMatches}                
+                                    showMoreProfileInfo={showMoreProfileInfo}
+                                    setShowMoreProfileInfo={setShowMoreProfileInfo}
+                                    setSelectedMatch={setSelectedMatch}
+                                />                            )
                         })}
                     </div>
                     <div className='matches-carousel'> 
                         {data.slice(20,).map(match=>{
                             return (
                                 //update to fetch individual profiles
-                                <MediumCard key={match.name} character={match} />
-                            )
+                                <MediumCard 
+                                    key={match.name} 
+                                    profile={match}
+                                    matches={setMatches}
+                                    setMatches={setMatches}                
+                                    showMoreProfileInfo={showMoreProfileInfo}
+                                    setShowMoreProfileInfo={setShowMoreProfileInfo}
+                                    setSelectedMatch={setSelectedMatch}
+                                />                            )
                         })}
                     </div>
                 </React.Fragment>
@@ -62,32 +103,60 @@ function Matches({matches,setMatches}){
                         {data.slice(0,5).map(match=>{
                             return (
                                 //update to fetch individual profiles
-                                <MediumCard key={match.name} character={match} />
-                            )
+                                <MediumCard 
+                                    key={match.name} 
+                                    profile={match}
+                                    matches={setMatches}
+                                    setMatches={setMatches}                
+                                    showMoreProfileInfo={showMoreProfileInfo}
+                                    setShowMoreProfileInfo={setShowMoreProfileInfo}
+                                    setSelectedMatch={setSelectedMatch}
+                                />                            )
                         })}
                     </div>
                     <div className='matches-carousel'> 
                         {data.slice(5,10).map(match=>{
                             return (
                                 //update to fetch individual profiles
-                                <MediumCard key={match.name} character={match} />
-                            )
+                                <MediumCard 
+                                    key={match.name} 
+                                    profile={match}
+                                    matches={setMatches}
+                                    setMatches={setMatches}                
+                                    showMoreProfileInfo={showMoreProfileInfo}
+                                    setShowMoreProfileInfo={setShowMoreProfileInfo}
+                                    setSelectedMatch={setSelectedMatch}
+                                />                            )
                         })}
                     </div>
                     <div className='matches-carousel'> 
                         {data.slice(10,15).map(match=>{
                             return (
                                 //update to fetch individual profiles
-                                <MediumCard key={match.name} character={match} />
-                            )
+                                <MediumCard 
+                                    key={match.name} 
+                                    profile={match}
+                                    matches={setMatches}
+                                    setMatches={setMatches}                
+                                    showMoreProfileInfo={showMoreProfileInfo}
+                                    setShowMoreProfileInfo={setShowMoreProfileInfo}
+                                    setSelectedMatch={setSelectedMatch}
+                                />                            )
                         })}
                     </div>
                     <div className='matches-carousel'> 
                         {data.slice(15,).map(match=>{
                             return (
                                 //update to fetch individual profiles
-                                <MediumCard key={match.name} character={match} />
-                            )
+                                <MediumCard 
+                                    key={match.name} 
+                                    profile={match}
+                                    matches={setMatches}
+                                    setMatches={setMatches}                
+                                    showMoreProfileInfo={showMoreProfileInfo}
+                                    setShowMoreProfileInfo={setShowMoreProfileInfo}
+                                    setSelectedMatch={setSelectedMatch}
+                                />                            )
                         })}
                     </div>
                 </React.Fragment>
@@ -99,24 +168,39 @@ function Matches({matches,setMatches}){
                     {data.slice(0,5).map(match=>{
                         return (
                             //update to fetch individual profiles
-                            <MediumCard key={match.name} character={match} />
-                        )
+                            <MediumCard 
+                            key={match.name} 
+                            profile={match}                
+                            showMoreProfileInfo={showMoreProfileInfo}
+                            setShowMoreProfileInfo={setShowMoreProfileInfo}
+                            setSelectedMatch={setSelectedMatch}
+                        />                        )
                     })}
                 </div>
                 <div className='matches-carousel'> 
                     {data.slice(5,10).map(match=>{
                         return (
                             //update to fetch individual profiles
-                            <MediumCard key={match.name} character={match} />
-                        )
+                            <MediumCard 
+                            key={match.name} 
+                            profile={match}                
+                            showMoreProfileInfo={showMoreProfileInfo}
+                            setShowMoreProfileInfo={setShowMoreProfileInfo}
+                            setSelectedMatch={setSelectedMatch}
+                        />                        )
                     })}
                 </div>
                 <div className='matches-carousel'> 
                     {data.slice(10,).map(match=>{
                         return (
                             //update to fetch individual profiles
-                            <MediumCard key={match.name} character={match} />
-                        )
+                            <MediumCard 
+                            key={match.name} 
+                            profile={match}                
+                            showMoreProfileInfo={showMoreProfileInfo}
+                            setShowMoreProfileInfo={setShowMoreProfileInfo}
+                            setSelectedMatch={setSelectedMatch}
+                        />                        )
                     })}
                 </div>
             </React.Fragment>
@@ -128,16 +212,26 @@ function Matches({matches,setMatches}){
                     {data.slice(0,5).map(match=>{
                         return (
                             //update to fetch individual profiles
-                            <MediumCard key={match.name} character={match} />
-                        )
+                            <MediumCard 
+                            key={match.name} 
+                            profile={match}                
+                            showMoreProfileInfo={showMoreProfileInfo}
+                            setShowMoreProfileInfo={setShowMoreProfileInfo}
+                            setSelectedMatch={setSelectedMatch}
+                        />                        )
                     })}
                 </div>
                 <div className='matches-carousel'> 
                     {data.slice(5,).map(match=>{
                         return (
                             //update to fetch individual profiles
-                            <MediumCard key={match.name} character={match} />
-                        )
+                            <MediumCard 
+                            key={match.name} 
+                            profile={match}                
+                            showMoreProfileInfo={showMoreProfileInfo}
+                            setShowMoreProfileInfo={setShowMoreProfileInfo}
+                            setSelectedMatch={setSelectedMatch}
+                        />                        )
                     })}
                 </div>
             </React.Fragment>
@@ -149,8 +243,13 @@ function Matches({matches,setMatches}){
                     {data.map(match=>{
                         return (
                             //update to fetch individual profiles
-                            <MediumCard key={match.name} character={match} />
-                        )
+                            <MediumCard 
+                            key={match.name} 
+                            profile={match}                
+                            showMoreProfileInfo={showMoreProfileInfo}
+                            setShowMoreProfileInfo={setShowMoreProfileInfo}
+                            setSelectedMatch={setSelectedMatch}
+                       />                        )
                     })}
                 </div>
             </React.Fragment>
@@ -160,12 +259,15 @@ function Matches({matches,setMatches}){
     // let matchesToDisplay = matches.map(match=>{
     //     return (
     //         //update to fetch individual profiles
-    //         <MediumCard key={match.name} character={match} />
+    //         <MediumCard key={match.name} profile={match} />
     //     )
     // })
 
     return(
         <React.Fragment>
+            {/* {showMoreProfileInfo?<MoreMatchInfo showMoreProfileInfo={showMoreProfileInfo} setShowMoreProfileInfo={setShowMoreProfileInfo} profile={selectedMatch}/>:null} */}
+            {showMoreProfileInfo?<React.Fragment><div className='matches-moreMatchInfo-curtain'>-</div> <MoreMatchInfo size={'m'} matches={matches} setMatches={setMatches} showMoreProfileInfo={showMoreProfileInfo} setShowMoreProfileInfo={setShowMoreProfileInfo} profile={selectedMatch} nameLength={selectedMatch.name.length} locationLength={selectedMatch.location.length}/></React.Fragment>:null}
+
             <div className='matches-container'>
                 <h1 className='matches-title'>Matches</h1>
                 <img className="mini-heart" src={heart} />

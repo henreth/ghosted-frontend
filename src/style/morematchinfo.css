@@ -29,6 +29,24 @@
     transition: all .15s;
     margin-left: 325px;
     margin-top: 95px;
+    z-index: 1000;
+  }
+
+  .matches-matchinfo-card{
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    background-color: black;
+    width: 850px;
+    height: 500px;
+    border-radius: 10px;
+    background-size: cover;
+    background-position: center;
+    box-shadow: -80px -15px 25px rgba(0, 0, 0, 0.199);
+    transition: all .15s;
+    margin-left: 970px;
+    margin-top: 810px;
+    z-index: 1000;
   }
 
   .moreprofile-info-card {
@@ -143,7 +161,7 @@ font-family: 'Montserrat', sans-serif;
   color: white;
 display: flex;
 justify-content: left;
-margin-top: 10%;
+margin-top: 0%;
 font-size: 120%;
 font-family: 'Montserrat', sans-serif;
 }

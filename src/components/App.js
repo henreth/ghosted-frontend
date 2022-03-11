@@ -119,14 +119,15 @@ function App () {
           </Route>
           <Route path ="/matches">
               <Matches 
+                  user={user}
                   matches = {matches}
                   setMatches = {setMatches} 
               />
           </Route>
           <Route exact path ='/match/:profileId'>
               <SelectedProfile
-                              matches={matches}
-                              setMatches={setMatches}                
+                  matches={matches}
+                  setMatches={setMatches}                
               />
           </Route>
 

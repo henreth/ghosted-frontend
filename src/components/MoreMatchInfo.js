@@ -6,7 +6,7 @@ import axios from 'axios';
 let unmatchUrl = 'http://localhost:4000/unmatch';
 let userUrl = 'http://localhost:4000/user';
 
-function MoreMatchInfo ({profile,nameLength, setShowMoreProfileInfo, locationLength,matches,setMatches}) {
+function MoreMatchInfo ({profile,nameLength,setShowMoreProfileInfo,locationLength,matches,setMatches,size}) {
 
     let [userx,setUserx] = useState('')
     useEffect(()=>{
@@ -35,7 +35,7 @@ function MoreMatchInfo ({profile,nameLength, setShowMoreProfileInfo, locationLen
 
     return (
         <div className='matchinfo-cardContainer'>
-            <div className='matchinfo-card'>
+            <div className={size!=='m'?'matchinfo-card':'matches-matchinfo-card'}>
             <img className='matchinfo-img' src={profile.image}/>
                 <div className='info-box'>
                     <h1 className={nameLength > 10?'matchinfo-card-title-long':'matchinfo-card-title'}>{profile.name}</h1>
