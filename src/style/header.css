@@ -10,9 +10,7 @@
     background: linear-gradient(#838181, #222020);
     background: transparent;
     position: fixed;
-    /* width: 120rem; */
     height: 55px;
-    /* border: .25px solid #dfdfdf; */
     transition-timing-function: ease-in;
     transition: all 1s;
 }
@@ -22,7 +20,6 @@
     width: 100%;
     height: 100%;
     background-color: transparent;
-    /* background: linear-gradient(#838181, #222020); */
     flex-direction: row;
     display: flex;
     justify-content: space-between;
@@ -32,6 +29,7 @@
 .header-logo {
     position: absolute;
     height: 50px;
+    cursor: default;
     /* padding-right: 1rem; */
     background-color: transparent;
     align-items: center;
@@ -53,15 +51,14 @@
 .header-title{
     font-family: 'Nosifer', cursive;
     position: absolute;
-    /* height: 100px; */
+    cursor: default;
     font-size: 300%;
-    /* padding-right: 1rem; */
     background-color: transparent;
     align-items: center;
     margin-left: 570px;
     margin-top: 10px;
     z-index: 10;
-    color: white;
+    color: #fff;
     opacity: .55;
     transition: 1s;
     animation: 'fadeInAnimation ease .4s';
