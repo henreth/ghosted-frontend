@@ -9,129 +9,6 @@ h2 {
   color: #fff;
 }
 
-.swipe {
-  position: absolute;
-}
-
-.cardContainer {
-  /* Default Size */
-  /* width: 90vw;
-  max-width: 260px;
-  height: 300px; */
-  /* Size 2 */
-  /* width: 190vw;
-  max-width: 360px;
-  height: 400px; */
-  margin-top: 70px;
-  width: 390vw;
-  max-width: 460px;
-  height: 490px;
-}
-/* #222423 */
-
-.card {
-  margin-top: 50px;
-  position: relative;
-  /* background-color: rgb(144, 161, 155); */
-  background-color: black;
-  /* Default Size */
-  /* width: 80vw;
-  max-width: 260px;
-  height: 300px; */
-  /* Size 2 */
-  /* width: 180vw;
-  max-width: 360px;
-  height: 445px; */
-  /* margin-top: 90; */
-  width: 380vw;
-  max-width: 460px;
-  height: 590px;
-  /* box-shadow: 0px 0px 60px 0px rgba(60, 236, 183, 0.062); */
-  border-radius: 20px;
-  background-size: cover;
-  background-position: center;
-  /* cursor: grab; */
-  box-shadow: -80px -15px 25px rgba(0,0,0,0.020);
-  -webkit-transform: skew(-36deg);
-  -moz-transform: skew(-36deg);
-  -ms-transform: skew(-36deg);
-  -o-transform: skew(-36deg);
-  transform: skew(0deg);
-  -webkit-transform-origin: 0% 100%;
-  -moz-transform-origin: 0% 100%;
-  -ms-transform-origin: 0% 100%;
-  -o-transform-origin: 0% 100%;
-  transform-origin: 0% 100%;
-
-}
-
-.card:active{
-  box-shadow: 0px 0px 60px 0px rgba(60, 236, 183, 0.384);
-}
-
-.cardContent {
-  width: 100%;
-  height: 100%;
-}
-
-.card h3 {
-  position: absolute;
-  font-size: xx-large;
-  bottom: 0;
-  margin: 10px;
-  margin-bottom: 30px;
-  margin-left: 13px;
-  color: #fff;
-  font-family: 'Montserrat', sans-serif;
-}
-
-.card h4 {
-  position: absolute;
-  font-weight: lighter;
-  bottom: 0;
-  margin: 10px;
-  margin-bottom: 10px;
-  color: #fff;
-}
-
-.card .age{
-  margin-left: 90px;
-  margin-bottom: 36px;
-  font-size: 20px;
-  font-weight: 100;
-}
-
-.location-icon {
-  filter: invert(100%);
-  position: absolute;
-  bottom: 0;
-  /* margin-left: -165px; */
-  margin-left: -450px;
-  margin-bottom: 6px;
-  height: 20px
-}
-
-.card .location-text {
-  position: absolute;
-  font-weight: light;
-  bottom: 0;
-  margin: 10px;
-  margin-left: 33px;
-  margin-bottom: 7px;
-  color: #fff;
-}
-
-.card .description-text {
-  position: absolute;
-  font-weight: 100;
-  bottom: 0;
-  margin: 10px;
-  margin-left: 14px;
-  margin-bottom: 7px;
-  color: #fff;
-  font-family: 'Montserrat', sans-serif;
-
-}
 
 .infoText {
   width: 100%;
@@ -257,33 +134,6 @@ h2 {
   transform: scale(.90);
 }
 
-.card .img {
-  height: 500px;
-  width: 460px;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  cursor: grab;
-}
-
-.card .img:active{
-  cursor: grabbing;
-}
-
-.card .info-icon {
-  filter: brightness(100%);
-  filter: invert(100%);
-  position: absolute;
-  bottom: 0;
-  margin-left: -45px;
-  margin-bottom: 45px;
-  height: 30px;
-  transition: .25s;
-}
-
-.card .info-icon:hover {
-  transform: scale(1.1);
-  cursor: pointer;
-}
 
 .moreProfileInfo-curtain{
   animation: fadeInAnimation ease .25s;
@@ -298,10 +148,6 @@ h2 {
 }
 
 
-
-/* animation: fadeInAnimation ease 3s;
-animation-iteration-count: 1;
-animation-fill-mode: forwards; */
 @keyframes fadeInAnimation {
   0% {
       opacity: 0;

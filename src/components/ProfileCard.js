@@ -1,6 +1,7 @@
 import React from 'react';
 import Card from './Card';
 import info from '../img/info-icon.png';
+import '../style/profilecard.css';
 
 
 export default function ProfileCard({childRefs,index,profile, swiped, outOfFrame, id,handleClickInfoButton}){
