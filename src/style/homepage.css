@@ -184,11 +184,10 @@ h2 {
 
 .like-button  {
   cursor: pointer;
-  height: 4.25rem;
+  height: 4.5rem;
   text-decoration: none;
   transition: all 0.2s;
   /* animation: pump 1s linear infinite; */
-  /* border-radius: 0 10% 0 0; */
 }
 
 .like-button:hover{
@@ -197,19 +196,36 @@ h2 {
   animation: pump 1.5s linear infinite;
 }
 
+.frozen-like-button{
+  filter: grayscale(100%);
+  transform: scale(1);
+  height: 4.25rem;
+  text-decoration: none;
+  transition: all 0.5s;
+}
+
 .reject-button {
   cursor: pointer;
   height: 4.25rem;
   text-decoration: none;
   transition: all 0.2s;
   margin-left: 5px;
-  /* border-radius: 100px; */
 }
 
 .reject-button:hover{
   filter: opacity(.5) drop-shadow(0 0 0 red); 
   transform: scale(1.15);
   transform: rotate(90deg);
+}
+
+.frozen-reject-button {
+  filter: invert(100%);
+  transform: scale(.90);
+  transform: rotate(45deg);
+  height: 4.25rem;
+  text-decoration: none;
+  transition: all 0.5s;
+  margin-left: 5px;
 }
 
 .undo-button {
@@ -220,7 +236,6 @@ h2 {
   transition: all 0.5s;
   margin-left: 3.75rem;
   margin-right: 3.25rem;
-  border-radius: 100px;
   z-index: 0;
 }
 
@@ -228,6 +243,18 @@ h2 {
   /* filter: invert(70%) ;  */
   transform: scale(1.25);
   transform: rotate(360deg);
+}
+
+.frozen-undo-button {
+  filter: grayscale(100%);
+  /* cursor: pointer; */
+  height: 5.25rem;
+  text-decoration: none;
+  transition: all 0.5s;
+  margin-left: 3.75rem;
+  margin-right: 3.25rem;
+  z-index: 0;
+  transform: scale(.90);
 }
 
 .card .img {

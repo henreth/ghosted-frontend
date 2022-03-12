@@ -4,9 +4,8 @@ import axios from 'axios';
 import undo from '../img/reboot-icon.png';
 import heart from '../img/real_heart.png';
 import reject from '../img/bones-icon.png';
-import location from '../img/location_icon.png';
+import ProfileCard from './ProfileCard'
 import Card from './Card';
-import image from '../img/abe.jpeg';
 import info from '../img/info-icon.png';
 import FakeModal from './MatchModal';
 import MoreProfileInfo from './MoreProfileInfo';
@@ -49,7 +48,7 @@ let undoUrl = 'http://localhost:4000/undo'
     const canSwipe = currentIndex >= 0
   
     // set last direction and decrease current index
-    function swiped (direction, character, index,id){
+    function swiped (direction, profile, index,id){
       setLastDirection(direction)
       updateCurrentIndex(index - 1)
       // console.log(db[index].id)
@@ -62,10 +61,8 @@ let undoUrl = 'http://localhost:4000/undo'
         .then(r=>{
           switch(r.data){
             case false:
-              console.log('No Match')
               break;
             case true:
-              // alert('You\'ve matched with '+ db[index].name+'!')
               setShowMatchModal(true);
               setMatches([...matches,db[index]])
               break;
@@ -86,15 +83,14 @@ let undoUrl = 'http://localhost:4000/undo'
       currentIndexRef.current >= idx && childRefs[idx].current.restoreCard()
     }
   
-    let swipe = async (dir, character) => {
+    let swipe = async (dir, profile) => {
       if (canSwipe && currentIndex < db.length) {
-        await childRefs[currentIndex].current.swipe(dir) // Swipe the card!
+        await childRefs[currentIndex].current.swipe(dir) // swipe card
         if (dir==='right'){
 
         } else if (dir==='left'){
 
         }
-        // setLastPerson(db[currentIndex])
       }
 
     }
@@ -119,51 +115,31 @@ let undoUrl = 'http://localhost:4000/undo'
       setShowMoreProfileInfo(true)
   }
 
+    let cardsToDisplay = db.map((profile, index) => (
+      <ProfileCard 
+        key={profile.name}
+        childRefs={childRefs} 
+        index={index} 
+        swiped={swiped} 
+        outOfFrame={outOfFrame} 
+        id={id} 
+        profile ={profile} 
+        handleClickInfoButton={handleClickInfoButton} />
+    ))
   
 
     return (
       <React.Fragment>
         <div>
-          <link
-            href='https://fonts.googleapis.com/css?family=Damion&display=swap'
-            rel='stylesheet'
-          />
-          <link
-            href='https://fonts.googleapis.com/css?family=Alatsi&display=swap'
-            rel='stylesheet'
-          />
           {showMatchModal? <FakeModal user={userx} profile={db[currentIndex+1]} setShowMatchModal={setShowMatchModal}/> : null}
           {showMoreProfileInfo?<React.Fragment><div className='moreProfileInfo-curtain'>-</div> <MoreProfileInfo showMoreProfileInfo={showMoreProfileInfo} setShowMoreProfileInfo={setShowMoreProfileInfo} profile={lastPerson} nameLength={lastPerson.name.length} locationLength={lastPerson.location.length}/></React.Fragment>:null}
           <div className='cardContainer'>
-            {db.map((character, index) => (
-              <Card
-                ref={childRefs[index]}
-                className='swipe'
-                key={character.name}
-                onSwipe={(dir) => swiped(dir, character, index,id)}
-                onCardLeftScreen={() => outOfFrame(character.name, index)}
-              >
-                <div
-                  style={{ backgroundImage: 'url(' + character.url + ')' }}
-                  className='card'
-                >
-                  <h3 className='name-age'>{character.name} {character.age}</h3>
-                  <img className='img' src={character.image}/>
-                  {/* <h4>{character.pronouns}</h4> */}
-                  {/* <img className = 'location-icon' src={location}/> */}
-                  {/* <div className='location-text'>{character.location}</div> */}
-                  <div className='description-text'>{character.description.split('').length >50 ? character.description.slice(0,50)+'...':character.description}</div>
-                  {/* <h4 className='age'>{character.age}</h4> */}
-                  <img className='info-icon' onClick={handleClickInfoButton} src={info} />
-
-                </div>
-              </Card>
-            ))}
+            {cardsToDisplay}
           </div>
           <div className='buttons'>
-            <img className="reject-button" onClick={() => swipe('left')} alt='reject' src={reject} />
-            <img className="undo-button" onClick={() => goBack()} alt='undo' src={undo} />
-            <img className="like-button" onClick={() => swipe('right')} alt='heart' src={heart} />
+            <img className={canSwipe?"reject-button":"frozen-reject-button"} onClick={() => swipe('left')} alt='reject' src={reject} />
+            <img className={canGoBack?"undo-button":"frozen-undo-button"} onClick={() => goBack()} alt='undo' src={undo} />
+            <img className={canSwipe?"like-button":"frozen-like-button"} onClick={() => swipe('right')} alt='heart' src={heart} />
            </div>
         </div>
       </React.Fragment>
