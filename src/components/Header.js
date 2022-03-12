@@ -1,12 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { NavLink,useHistory } from "react-router-dom";
 import logo from '../img/heart-ghost.png' 
 import '../style/header.css';
 import Sidebar from './Sidebar';
 import reset from '../img/reset-icon2.png';
 import axios from "axios";
-import userPhoto from '../img/userPhoto.jpeg';
-import homeIcon from '../img/dog-house-icon.png';
+import homeIcon from '../img/home-icon.png';
 import helpIcon from '../img/help-icon.png';
 import InfoModal from './InfoModal';
 
