@@ -3,7 +3,7 @@ import { NavLink,useHistory } from "react-router-dom";
 import logo from '../img/heart-ghost.png' 
 import '../style/header.css';
 import Sidebar from './Sidebar';
-import reset from '../img/reset-icon2.png';
+import reset from '../img/reset-icon.png';
 import axios from "axios";
 import homeIcon from '../img/home-icon.png';
 import helpIcon from '../img/help-icon.png';
