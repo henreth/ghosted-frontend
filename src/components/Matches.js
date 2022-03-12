@@ -13,6 +13,8 @@ function Matches({matches,user,setMatches}){
     let [showMoreProfileInfo, setShowMoreProfileInfo] = useState(false);
     let [selectedMatch,setSelectedMatch] = useState(user);
 
+    let filteredMatches = matches;
+
 
     function displayMatches(data){
         if(data.length>=20){
