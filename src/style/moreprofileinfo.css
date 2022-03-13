@@ -77,12 +77,9 @@
     width: 460px;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
-    filter: grayscale(100%);
+    filter: invert(25%);
   }
 
-/* .moreprofile-info-card:hover{
-    box-shadow: 0px 0px 60px 0px rgba(60, 236, 183, 0.295);
-  } */
 
 .location-icon-here {
    filter: invert(100%);

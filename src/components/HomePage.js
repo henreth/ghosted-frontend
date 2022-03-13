@@ -55,7 +55,7 @@ let undoUrl = 'http://localhost:4000/undo'
       console.log(id)
 
       if (direction==='right'){
-        axios.post(likeUrl,{
+        axios.post('http://localhost:4000/like',{
           user_id: id,
           profile_id: db[index].id})
         .then(r=>{

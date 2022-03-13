@@ -1,16 +1,6 @@
 import * as BS from 'react-bootstrap'
 import React,{ useState } from 'react'
-import { useHistory } from 'react-router-dom'
-import confetti from "canvas-confetti";
 import '../style/infomodal.css'
-import userPhoto from '../img/userPhoto.jpeg'
-import InfoCard from './InfoCard';
-import undo from '../img/reboot-icon.png';
-import heart from '../img/real_heart.png';
-import reject from '../img/bones-icon.png';
-
-
-
 
 function InfoModal({ setShowInfoModal,user }) {
     const [openInfoModal, setOpenInfoModal] = useState(true)

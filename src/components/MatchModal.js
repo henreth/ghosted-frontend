@@ -3,7 +3,7 @@ import React,{ useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import confetti from "canvas-confetti";
 import '../style/matchmodal.css'
-import userPhoto from '../img/userPhoto.jpeg'
+import userPhoto from '../img/user-icon.png'
 
 
 

@@ -4,7 +4,7 @@ import '../style/sidebar.css';
 import MiniCard from './MiniCard';
 import MoreMatchInfo from './MoreMatchInfo';
 import MoreProfileInfo from './MoreProfileInfo';
-import userPhoto from '../img/userPhoto.jpeg';
+import userPhoto from '../img/user-icon.png'
 import location from '../img/location_icon.png';
 
 

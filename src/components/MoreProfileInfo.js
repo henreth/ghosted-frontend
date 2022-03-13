@@ -1,7 +1,7 @@
 import React, { useState,useEffect } from 'react'
 import '../style/moreprofileinfo.css';
 import location from '../img/location_icon.png';
-import userPhoto from '../img/userPhoto.jpeg';
+import userPhoto from '../img/user-icon.png'
 import axios from 'axios';
 
 let unmatchUrl = 'http://localhost:4000/unmatch';
