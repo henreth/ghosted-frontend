@@ -85,7 +85,7 @@ function MatchModal({ setShowMatchModal, user, profile}) {
 
                 <BS.Modal.Body style={{ padding: '80px',paddingLeft:'70px',textAlign: "center", opacity: '1', color: 'white', background: ''}}>
                     <div className='text-holder'>
-                        <strong style={{marginLeft:'35px', fontSize:'70px'}}>IT'S A MATCH!</strong>
+                        <strong className='itsamatch' style={{marginLeft:'35px', fontSize:'70px', fontFamily:"Nosifer, cursive;"}}>IT'S A MATCH!</strong>
                         <strong style={{marginLeft: '40px', fontSize:'20px'}}> YOU AND {profile.name.toUpperCase()} LIKED ONE ANOTHER</strong>
                         <img className = 'match-user-image' src={userPhoto}/>
                         <img className = 'match-profile-image' src={profile.image}/>

@@ -15,6 +15,12 @@
     background-size: cover;
     background-position: center;
     cursor: pointer;
+    transition: color .5s;
+  }
+
+    
+  .mini-card:hover {
+    color: rgb(95, 165, 142);
   }
 
   .mini-name{
