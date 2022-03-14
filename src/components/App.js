@@ -57,6 +57,11 @@ function App () {
   let [showMatchModal, setShowMatchModal] = useState(false);
   let [showInfoModal, setShowInfoModal] = useState(false);
 
+  function handleAllModals(){
+    setShowMatchModal(false)
+    setShowInfoModal(false)
+  }
+
 
   useEffect(()=>{
     axios.get(unswipesUrl)
@@ -95,6 +100,7 @@ function App () {
         showInfoModal={showInfoModal}
         setShowInfoModal={setShowInfoModal}
         user={user}
+        handleAllModals={handleAllModals}
         />
       <div className='main-page'>
       <Switch>
@@ -115,6 +121,7 @@ function App () {
               user={user}
               showMatchModal={showMatchModal}
               setShowMatchModal={setShowMatchModal}
+              handleAllModals={handleAllModals}
               />
           </Route>
           <Route path ="/matches">

@@ -21,7 +21,7 @@ let dislikeUrl = 'http://localhost:4000/dislike'
 let undoUrl = 'http://localhost:4000/undo'
 
   
-  function HomePage ({db,setDB,likes,setLikes,currentIndex,setCurrentIndex,lastPerson,setLastPerson,peopleUrl,user,matches,setMatches,showMatchModal, setShowMatchModal}) {
+  function HomePage ({db,setDB,likes,setLikes,currentIndex,setCurrentIndex,lastPerson,setLastPerson,peopleUrl,user,matches,setMatches,showMatchModal, setShowMatchModal,handleAllModals}) {
     document.title='Ghostd - Home'
     let [userx,setUserx] = useState('')
     useEffect(()=>{

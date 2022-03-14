@@ -14,6 +14,7 @@ function Sidebar({matches,setMatches,user}) {
     let [selectedMatch,setSelectedMatch] = useState(user);
 
 
+
     function handleClickUser(){
         setShowMoreUserInfo(!showMoreUserInfo)
         setShowMoreProfileInfo(false)

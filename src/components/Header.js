@@ -13,7 +13,7 @@ import InfoModal from './InfoModal';
 let undoUrl = 'http://localhost:4000/reset'
 
 
-function Header({matches,setMatches, user,showInfoModal, setShowInfoModal}) {
+function Header({matches,setMatches, user,showInfoModal, setShowInfoModal,handleAllModals}) {
 
   let history = useHistory();
 
@@ -29,6 +29,7 @@ function Header({matches,setMatches, user,showInfoModal, setShowInfoModal}) {
   }
 
   function handleInfoClick(){
+    handleAllModals()
     setShowInfoModal(!showInfoModal)
   }
   
