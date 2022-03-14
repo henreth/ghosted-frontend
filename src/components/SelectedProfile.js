@@ -6,7 +6,7 @@ import LargeCard from "./LargeCard";
 
 let profileUrl = 'http://localhost:4000/profile/'
 
-function SelectedProfile({matches,setMatches}) {
+export default function SelectedProfile({matches,setMatches}) {
     const params = useParams();
     let [data,setData]=useState([]);
     let [nameLength, setNameLength] = useState(0)
@@ -39,5 +39,3 @@ function SelectedProfile({matches,setMatches}) {
     )
 
 }
-
-export default SelectedProfile;

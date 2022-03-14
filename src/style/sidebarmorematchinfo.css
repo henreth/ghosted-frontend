@@ -12,7 +12,7 @@
     /* margin-left: 300px; */
   }
 
-  .matchinfo-card {
+.matchinfo-card {
     /* position: flex; */
     /* background-color: rgb(78, 80, 78); */
     position: absolute;
@@ -34,30 +34,9 @@
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
 
-  }
+}
 
-  .matches-matchinfo-card{
-    position: absolute;
-    display: flex;
-    flex-direction: row;
-    background-color: black;
-    width: 850px;
-    height: 500px;
-    border-radius: 10px;
-    background-size: cover;
-    background-position: center;
-    box-shadow: -80px -15px 25px rgba(0, 0, 0, 0.199);
-    transition: all .15s;
-    margin-left: 970px;
-    margin-top: 810px;
-    z-index: 1000;
-    animation: fadeInAnimation ease .3s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
-
-  }
-
-  .moreprofile-info-card {
+.moreprofile-info-card {
     /* position: flex; */
     /* background-color: rgb(78, 80, 78); */
     position: absolute;
@@ -75,22 +54,9 @@
     margin-left: -390px;
     margin-top: 150px;
     z-index: 1000;
-  }
+}
 
   
-/* .matchinfo-card {
-    display: flex;
-    flex-direction: row;
-    background-color: black;
-    width: 850px;
-    height: 500px;
-    border-radius: 10px;
-    background-size: cover;
-    background-position: center;
-    box-shadow: -80px -15px 25px rgba(0, 0, 0, 0.199);
-    transition: all .15s;
-  } */
-
 .matchinfo-img {
     /* display: flex; */
     /* flex-direction: row; */
@@ -100,16 +66,16 @@
     max-width: 410px;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
-  }
+}
 
 .matchinfo-card:hover{
     box-shadow: 0px 0px 60px 0px rgba(60, 236, 183, 0.295);
-  }
+}
 
 .location-icon-here {
    filter: invert(100%);
    height: 70%;
-  }
+}
 
 .info-box {
   display: flex;
@@ -164,6 +130,24 @@ color: white;
 display: flex !important;
 justify-content: center;
 font-family: 'Montserrat', sans-serif;
+}
+
+.matchinfo-card-text {
+  color: white;
+  display: absolute !important;
+  justify-content: left !important;
+  margin-top: 0%;
+  font-size: 120%;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.matchinfo-card-text-long {
+  color: white;
+  display: absolute !important;
+  justify-content: left !important;
+  margin-top: 0%;
+  font-size: 66%;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .matches-matchinfo-card-text {

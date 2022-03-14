@@ -9,12 +9,11 @@ body{
   width: 100vw;
   min-height: 100vh;
   overflow: hidden;
-  /* background: linear-gradient(#0c0c0c, #312c2c); */
-  background: linear-gradient(-40deg, #121312, #4d4b4c, #0f0f0f, #464948);
+  /* background: linear-gradient(-40deg, #121312, #4d4b4c, #0f0f0f, #464948); */
+  background: linear-gradient(40deg, #ced1ce, #4d4b4c, #bebebe, #343535);
   background-size: 400% 400%;
   animation: gradient 50s ease infinite;
   font-family: 'Montserrat', sans-serif;
-
 }
 
 

@@ -1,12 +1,12 @@
 import React, { useState,useEffect } from 'react'
-import '../style/morematchinfo.css';
+import '../style/sidebarmorematchinfo.css';
 import location from '../img/location_icon.png';
 import axios from 'axios';
 
 let unmatchUrl = 'http://localhost:4000/unmatch';
 let userUrl = 'http://localhost:4000/user';
 
-function MoreMatchInfo ({profile,nameLength,setShowMoreProfileInfo,descriptionLength,locationLength,matches,setMatches,size}) {
+function SideBarMoreMatchInfo ({profile,nameLength,setShowMoreProfileInfo,descriptionLength,locationLength,matches,setMatches}) {
 
     let [userx,setUserx] = useState('')
     useEffect(()=>{
@@ -33,16 +33,18 @@ function MoreMatchInfo ({profile,nameLength,setShowMoreProfileInfo,descriptionLe
         setShowMoreProfileInfo(false)
     }
 
+    let matchinfocardtext = descriptionLength >40?'matchinfo-card-text-long':'matchinfo-card-text'
+
     return (
         <div className='matchinfo-cardContainer'>
-            <div className='matches-matchinfo-card'>
+            <div className='matchinfo-card'>
             <img className='matchinfo-img' src={profile.image}/>
                 <div className='info-box'>
                     <h1 className={nameLength > 10?'matchinfo-card-title-long':'matchinfo-card-title'}>{profile.name}</h1>
                     <h3 className={locationLength > 15? 'matchinfo-card-location-long':'matchinfo-card-location'}><img className ='location-icon-here' src={location}/>{profile.location}</h3>
                     <h3 className='matchinfo-card-subtitle'>{profile.pronouns} - {profile.age} years dead</h3>
                     <hr></hr>
-                    <p className='matches-matchinfo-card-text'>{profile.description}</p>
+                    <p className={matchinfocardtext}>{profile.description}</p>
                     {clicked? <button className='matchinfo-clicked-button'>UNMATCHED</button>:<button className='matchinfo-unmatch-button' onClick={handleRemoveClick}>UNMATCH</button>}
                     <button className='matchinfo-close-button' onClick={handleCloseProfile}>CLOSE PROFILE</button>
                 </div>
@@ -51,4 +53,4 @@ function MoreMatchInfo ({profile,nameLength,setShowMoreProfileInfo,descriptionLe
     )
 }
 
-export default MoreMatchInfo;
+export default SideBarMoreMatchInfo;
