@@ -2,10 +2,11 @@ import React, { useState, useEffect } from 'react'
 import { Route, Switch } from "react-router-dom";
 import axios from 'axios';
 import '../style/app.css';
-import NavBar from './Header';
+import Header from './Header';
 import HomePage from './HomePage';
 import Matches from './Matches';
 import SelectedProfile from './SelectedProfile';
+import '../components/InfoModal'
 
 //Endpoints:
 
@@ -92,7 +93,7 @@ function App () {
 
   return (
     <React.Fragment>
-      <NavBar
+      <Header
         matches = {matches}
         setMatches = {setMatches}
         showMatchModal={showMatchModal}
