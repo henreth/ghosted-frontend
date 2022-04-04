@@ -27,7 +27,7 @@ function Header({matches,setMatches, user,showInfoModal, setShowInfoModal,handle
   function handleHomeClick(){
     history.push('/')
   }
-
+ 
   function handleInfoClick(){
     handleAllModals()
     setShowInfoModal(!showInfoModal)
