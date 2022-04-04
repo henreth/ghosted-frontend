@@ -19,7 +19,13 @@ function Matches({ matches, user, setMatches }) {
         setSearch(event.target.value);
     }
 
-    let filteredMatches = matches;
+    function chunk(array, limit) {
+        if (array.length <= limit) return [array];
+        const perChunk = Math.ceil(array.length / Math.ceil(array.length / limit));
+        return [array.slice(0, perChunk)].concat(chunk(array.slice(perChunk), limit));
+      }
+
+    let splitMatches = chunk(matches,5)
 
     function displayMatchesRow(data) {
         return <div className='matches-carousel'>
@@ -37,47 +43,55 @@ function Matches({ matches, user, setMatches }) {
     }
 
     function displayMatches(data) {
-        if (data.length >= 20) {
-            return (
+        return data.map(row=> {
+            return(
                 <React.Fragment>
-                    {displayMatchesRow(data.slice(0, 5))}
-                    {displayMatchesRow(data.slice(5, 10))}
-                    {displayMatchesRow(data.slice(10, 15))}
-                    {displayMatchesRow(data.slice(15, 20))}
-                    {displayMatchesRow(data.slice(20,))}
+                    {displayMatchesRow(row)}
                 </React.Fragment>
             )
-        } else if (data.length >= 15) {
-            return (
-                <React.Fragment>
-                    {displayMatchesRow(data.slice(0, 5))}
-                    {displayMatchesRow(data.slice(5, 10))}
-                    {displayMatchesRow(data.slice(10, 15))}
-                    {displayMatchesRow(data.slice(15,))}
-                </React.Fragment>
-            )
-        } else if (data.length >= 10) {
-            return (
-                <React.Fragment>
-                    {displayMatchesRow(data.slice(0, 5))}
-                    {displayMatchesRow(data.slice(5, 10))}
-                    {displayMatchesRow(data.slice(10,))}
-                </React.Fragment>
-            )
-        } else if (data.length >= 5) {
-            return (
-                <React.Fragment>
-                    {displayMatchesRow(data.slice(0, 5))}
-                    {displayMatchesRow(data.slice(5,))}
-                </React.Fragment>
-            )
-        } else {
-            return (
-                <React.Fragment>
-                    {displayMatchesRow(data)}
-                </React.Fragment>
-            )
-        }
+        })
+
+        // if (data.length >= 20) {
+        //     return (
+        //         <React.Fragment>
+        //             {displayMatchesRow(data.slice(0, 5))}
+        //             {displayMatchesRow(data.slice(5, 10))}
+        //             {displayMatchesRow(data.slice(10, 15))}
+        //             {displayMatchesRow(data.slice(15, 20))}
+        //             {displayMatchesRow(data.slice(20,))}
+        //         </React.Fragment>
+        //     )
+        // } else if (data.length >= 15) {
+        //     return (
+        //         <React.Fragment>
+        //             {displayMatchesRow(data.slice(0, 5))}
+        //             {displayMatchesRow(data.slice(5, 10))}
+        //             {displayMatchesRow(data.slice(10, 15))}
+        //             {displayMatchesRow(data.slice(15,))}
+        //         </React.Fragment>
+        //     )
+        // } else if (data.length >= 10) {
+        //     return (
+        //         <React.Fragment>
+        //             {displayMatchesRow(data.slice(0, 5))}
+        //             {displayMatchesRow(data.slice(5, 10))}
+        //             {displayMatchesRow(data.slice(10,))}
+        //         </React.Fragment>
+        //     )
+        // } else if (data.length >= 5) {
+        //     return (
+        //         <React.Fragment>
+        //             {displayMatchesRow(data.slice(0, 5))}
+        //             {displayMatchesRow(data.slice(5,))}
+        //         </React.Fragment>
+        //     )
+        // } else {
+        //     return (
+        //         <React.Fragment>
+        //             {displayMatchesRow(data)}
+        //         </React.Fragment>
+        //     )
+        // }
     }
 
     function handleSearchClick(event){
@@ -112,7 +126,7 @@ function Matches({ matches, user, setMatches }) {
             </div>
 
             <div className='matches-container'>
-                {displayMatches(matches)}
+                {displayMatches(splitMatches)}
             </div>
         </React.Fragment>
     );
